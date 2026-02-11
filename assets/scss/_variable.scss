@@ -1,0 +1,125 @@
+:root {
+  // font
+  --font-heading: "Trajan Pro 3", sans-serif;
+  --font-body: "Montserrat", sans-serif;
+  // color
+  --color-black: #181819;
+  --color-white: #ffffff;
+  --color-primary-1: #ffe756;
+  --color-primary-2: #d4a734;
+  --color-primary-3: #a87439;
+  --color-secondary-1: #f9f6ee;
+  --color-secondary-2: #f0e8d7;
+  --color-gray-1: #f1f0f2;
+  --color-gray-2: #000000;
+  --color-bg: #f4f4f4;
+}
+body {
+  font-family: var(--font-body);
+  color: var(--color-black);
+}
+// font variable
+.font-heading {
+  font-family: var(--font-heading);
+}
+.font-body {
+  font-family: var(--font-body);
+}
+.heading-1 {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  line-height: 32px;
+  font-weight: 400;
+
+  @media (max-width: 991px) {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+.heading-2 {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 400;
+
+  @media (max-width: 991px) {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+.heading-3 {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: bold;
+}
+.body-0 {
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+}
+.body-1 {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: 500;
+}
+.body-2 {
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 500;
+}
+.body-20-sm {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+  font-family: var(--font-body);
+}
+.btn-body-font {
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 600;
+}
+.btn-heading-font {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 600;
+}
+// color variable
+.color-black {
+  color: var(--color-black);
+}
+.color-white {
+  color: var(--color-white);
+}
+.color-primary-1 {
+  color: var(--color-primary-1);
+}
+.color-primary-2 {
+  color: var(--color-primary-2);
+}
+.color-primary-3 {
+  color: var(--color-primary-3);
+}
+.color-secondary-1 {
+  color: var(--color-secondary-1);
+}
+.color-secondary-2 {
+  color: var(--color-secondary-2);
+}
+.color-gray-1 {
+  color: var(--color-gray-1);
+}
+.color-gray-2 {
+  color: var(--color-gray-2);
+}
+// layout
+.limit-width {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}

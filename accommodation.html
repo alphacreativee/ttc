@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Khách sạn</title>
+    <!-- import favicon -->
+    <link
+      rel="icon"
+      href="./assets/images/icons/favicon.ico"
+      type="image/x-icon"
+    />
+    <!-- meta -->
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="" />
+    <!-- meta -->
+    <link rel="stylesheet" href="./assets/libs/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/libs/lenis.css" />
+    <link rel="stylesheet" href="./assets/libs/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/libs/glightbox.min.css" />
+    <link rel="stylesheet" href="./assets/libs/lightpick.min.css" />
+    <!-- end meta -->
+    <!-- link custom css page -->
+    <link rel="stylesheet" href="./assets/fonts/montserrat/font.css" />
+    <link rel="stylesheet" href="./assets/fonts/trajan-pro/font.css" />
+    <link rel="stylesheet" href="./assets/main/css/style.min.css" />
+    <!-- end link custom css page -->
+    <!-- scrollRestoration -->
+    <script>
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+    </script>
+  </head>
+  <body>
+    <!-- layout -->
+    <!-- header -->
+    <script>
+      fetch("./components/header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header").innerHTML = data;
+          const currentPath = window.location.pathname || "/";
+
+          const navLinks = document.querySelectorAll(".header-menu ul>li>a");
+          navLinks.forEach((link) => {
+            const linkPath = link.getAttribute("href");
+
+            // Normalize paths for comparison
+            let normalizedCurrentPath = currentPath;
+            let normalizedLinkPath = linkPath;
+
+            // Remove leading "./" from link path
+            if (normalizedLinkPath.startsWith("./")) {
+              normalizedLinkPath = normalizedLinkPath.substring(1);
+            }
+
+            // Get the last segment of the path
+            const currentSegment = normalizedCurrentPath.split("/").pop() || "";
+            const linkSegment = normalizedLinkPath.split("/").pop() || "";
+
+            // Check if current path is root or ends with /
+            const isRootPath =
+              currentPath === "/" ||
+              currentPath.endsWith("/") ||
+              currentSegment === "";
+
+            // Check if link is home/index
+            const isHomeLink =
+              linkPath === "/" ||
+              linkPath === "./" ||
+              linkPath === "./index.html" ||
+              linkPath === "index.html" ||
+              linkSegment === "index.html";
+
+            // Match logic
+            const isMatch =
+              normalizedLinkPath === normalizedCurrentPath || // Exact match
+              currentSegment === linkSegment || // Segment match
+              (isRootPath && isHomeLink) || // Root path matches home link
+              (currentPath.endsWith(normalizedLinkPath) &&
+                normalizedLinkPath !== "/");
+
+            if (isMatch) {
+              link.classList.add("active");
+            }
+          });
+        });
+    </script>
+    <header id="header"></header>
+    <!-- end header -->
+    <main>
+      <section class="hero">
+        <div class="container-fluid p-0">
+          <!-- option image -->
+          <div class="hero-image d-none">
+            <img src="./assets/images/del/banner-1.webp" alt="" />
+          </div>
+          <!-- end option image -->
+          <!-- option slider change content -->
+          <div class="hero-option-slider">
+            <div class="swiper hero-slider h-100">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="hero-slider-img">
+                    <img src="./assets/images/del/banner-1.webp" alt="" />
+                  </div>
+                  <div class="hero-slider-content d-none">
+                    <div class="slider-tag">Nesta Celia DaNang</div>
+                    <div class="slider-title">
+                      Your <br />sky by <br />the sea
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="hero-slider-img">
+                    <img src="./assets/images/del/banner-2.webp" alt="" />
+                  </div>
+                  <div class="hero-slider-content d-none">
+                    <div class="slider-tag">Nesta The Grand Haonam</div>
+                    <div class="slider-title">
+                      Luxury and <br />Tranquility Amid <br />Hanoi’s Pulse
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="hero-slider-img">
+                    <img src="./assets/images/del/banner-3.webp" alt="" />
+                  </div>
+                  <div class="hero-slider-content d-none">
+                    <div class="slider-tag">NESTA HOI AN</div>
+                    <div class="slider-title">
+                      Peace in<br />
+                      the Land <br />of Heritage
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slider-content-wrapper">
+            <div class="slider-content-line-vertical"></div>
+            <div class="slider-content-main">
+              <div class="slider-content-import"></div>
+              <div class="slider-pagination"></div>
+            </div>
+          </div>
+          <!-- end option slider change content -->
+          <!-- option video -->
+          <div class="hero-video-banner d-none">
+            <video
+              class="hero-video"
+              autoplay
+              loop
+              muted
+              playsinline
+              poster="./assets/images/del/banner-1.webp"
+            >
+              <source src="./assets/images/del/banner.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <!-- end option video -->
+          <div class="booking-form-wrapper">
+            <div class="btn-booking-close">
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 13 13"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M12.3535 0.353516L0.353516 12.3535" stroke="#181819" />
+                <path d="M0.353516 0.353516L12.3535 12.3535" stroke="#181819" />
+              </svg>
+            </div>
+            <div class="booking-form-container">
+              <form action="">
+                <div class="booking-form-item">
+                  <div class="dropdown-custom-select select-destination">
+                    <div
+                      class="dropdown-custom-btn d-flex align-items-center justify-content-between"
+                    >
+                      <div
+                        class="d-flex align-items-center dropdown-custom-label gap-2"
+                      >
+                        <div class="icon flex-shrink-0">
+                          <img
+                            src="./assets/images/icons/icon-destination.svg"
+                            alt=""
+                          />
+                        </div>
+                        <div class="dropdown-custom-text">Điểm đến</div>
+                      </div>
+                      <div class="icon-arrow">
+                        <img
+                          src="./assets/images/icons/icon-arrow-down.svg"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                    <div class="dropdown-custom-menu">
+                      <div class="dropdown-custom-item">
+                        Nesta The Grand Haonam
+                      </div>
+                      <div class="dropdown-custom-item">Nesta Hanoi Hotel</div>
+                      <div class="dropdown-custom-item">
+                        Nesta Celia Danang Hotel
+                      </div>
+                      <div class="dropdown-custom-item">Nesta Danang Hotel</div>
+                      <div class="dropdown-custom-item">
+                        Nesta Hoian Resort & Spa
+                      </div>
+                      <div class="dropdown-custom-item">
+                        Nesta Valley Dalat Hotel
+                      </div>
+                      <div class="dropdown-custom-item">Nesta Saigon Hotel</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="booking-form-item">
+                  <div
+                    class="booking-calendar d-flex align-items-center justify-content-between"
+                  >
+                    <div class="d-flex align-items-center gap-2">
+                      <div class="icon flex-shrink-0">
+                        <img
+                          src="./assets/images/icons/icon-calendar.svg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="booking-time d-flex align-items-center">
+                        <input type="text" id="checkInDate" />
+                        <span>-</span>
+                        <input type="text" id="checkOutDate" />
+                      </div>
+                    </div>
+                    <div class="icon-arrow d-none">
+                      <img
+                        src="./assets/images/icons/icon-arrow-down.svg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="booking-form-item">
+                  <div class="select-people">
+                    <div
+                      class="select-people-wrapper d-flex align-items-center gap-2"
+                    >
+                      <div class="icon flex-shrink-0">
+                        <img
+                          src="./assets/images/icons/icon-people.svg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="label">
+                        <span class="adult-value">1</span> Người lớn,
+                        <span class="child-value">0</span> Trẻ em
+                      </div>
+                    </div>
+                    <div class="select-box">
+                      <div class="adult">
+                        <div class="label">Người lớn</div>
+                        <div class="select">
+                          <div class="min">-</div>
+                          <div class="val">1</div>
+                          <div class="plus">+</div>
+                        </div>
+                      </div>
+                      <div class="child">
+                        <div class="label">Trẻ em</div>
+                        <div class="select">
+                          <div class="min">-</div>
+                          <div class="val">0</div>
+                          <div class="plus">+</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="booking-form-item">
+                  <div
+                    class="booking-promotion d-flex align-items-center gap-2"
+                  >
+                    <div class="icon flex-shrink-0">
+                      <img
+                        src="./assets/images/icons/icon-promotion.svg"
+                        alt=""
+                      />
+                    </div>
+                    <input type="text" placeholder="Mã khuyến mãi" />
+                  </div>
+                </div>
+                <div
+                  class="booking-form-item button-find-room d-flex justify-content-end"
+                >
+                  <button class="button-global">
+                    <span>tìm phòng</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="section-accommodation"
+        section-fade-each-item
+        enabled-fade-each-mobile
+      >
+        <div class="section-wrapper">
+          <div
+            class="filter-section d-flex align-items-center justify-content-between"
+          >
+            <h2 class="title heading-1 effect-line">KHÁCH SẠN</h2>
+            <div class="filter-list-button d-none d-lg-flex data-fade-in">
+              <div
+                class="filter-button active btn-body-font color-black"
+                data-type="all"
+              >
+                Tất cả
+              </div>
+              <div
+                class="filter-button btn-body-font color-black"
+                data-type="type-1"
+              >
+                Hà Nội
+              </div>
+              <div
+                class="filter-button btn-body-font color-black"
+                data-type="type-2"
+              >
+                Đã Nẵng
+              </div>
+              <div
+                class="filter-button btn-body-font color-black"
+                data-type="type-3"
+              >
+                Hội An
+              </div>
+              <div
+                class="filter-button btn-body-font color-black"
+                data-type="type-4"
+              >
+                Đà Lạt
+              </div>
+              <div
+                class="filter-button btn-body-font color-black"
+                data-type="type-5"
+              >
+                Hồ Chí Minh
+              </div>
+            </div>
+            <div
+              class="dropdown-custom filter-dropdown d-flex d-lg-none data-fade-in-mobile"
+            >
+              <div class="dropdown-custom-btn">
+                <div class="value-select">
+                  <span data-tab="home">Tất cả</span>
+                </div>
+                <div class="icon">
+                  <svg
+                    width="8"
+                    height="5"
+                    viewBox="0 0 8 5"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M7.34082 0.5C6.67415 0.5 4.34082 2.5 3.67415 4.5C3.00749 2.5 0.674153 0.5 0.0074861 0.5"
+                      stroke="white"
+                      stroke-linejoin="bevel"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div class="dropdown-custom-menu">
+                <div class="dropdown-custom-item">
+                  <span data-tab="profile">Hà Nội</span>
+                </div>
+                <div class="dropdown-custom-item">
+                  <span data-tab="contact">Đà Nẵng</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="filter-section-result accommodation-grid">
+            <div
+              class="accommodation-item filter-item"
+              data-filter="type-1"
+              data-fade-item
+            >
+              <a href="./accommodation-detail.html" class="image">
+                <img src="./assets/images/del/news-1.jpg" alt="" />
+              </a>
+              <div class="content">
+                <a
+                  href="./accommodation-detail.html"
+                  class="content-title body-20-sm color-gray-2"
+                >
+                  Nesta The Grand Haonam
+                </a>
+                <div class="content-info">
+                  <div class="content-info__item body-1 color-gray-2">
+                    <div class="icon">
+                      <img
+                        src="./assets/images/icons/icon-location-black.svg"
+                        alt=""
+                      />
+                    </div>
+                    Số 83 Hào Nam, Phường Ô Chợ Dừa, Hà Nội
+                  </div>
+                  <div class="content-info__item body-1 color-gray-2">
+                    <div class="icon">
+                      <img
+                        src="./assets/images/icons/icon-phone-black.svg"
+                        alt=""
+                      />
+                    </div>
+                    +84 982 822 216
+                  </div>
+                  <div class="content-info__item body-1 color-gray-2">
+                    <div class="icon">
+                      <img
+                        src="./assets/images/icons/icon-mail-black.svg"
+                        alt=""
+                      />
+                    </div>
+                    fo.terra@nestahotel.com.vn
+                  </div>
+                </div>
+                <div
+                  class="btn-wrapper d-flex align-items-center justify-content-between"
+                >
+                  <a href="#" class="button-global">
+                    <span>đặt phòng</span>
+                  </a>
+                  <a
+                    href="./accommodation-detail.html"
+                    class="btn-arrow text-uppercase color-black"
+                  >
+                    <span>chi tiết</span>
+                    <div class="icon">
+                      <svg
+                        width="14"
+                        height="11"
+                        viewBox="0 0 14 11"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
+                          stroke="#181819"
+                          stroke-linejoin="bevel"
+                        />
+                      </svg>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              class="accommodation-item filter-item"
+              data-filter="type-1"
+              data-fade-item
+            >
+              <a href="./accommodation-detail.html" class="image">
+                <img src="./assets/images/del/news-1.jpg" alt="" />
+              </a>
+              <div class="content">
+                <a
+                  href="./accommodation-detail.html"
+                  class="content-title body-20-sm color-gray-2"
+                >
+                  Nesta Hanoi Hotel
+                </a>
+                <div class="content-info">
+                  <div class="content-info__item body-1 color-gray-2">
+                    <div class="icon">
+                      <img
+                        src="./assets/images/icons/icon-location-black.svg"
+                        alt=""
+                      />
+                    </div>
+                    87 Cửa Đại, Phường Cẩm Châu, Tp. Hội An, Quảng Nam
+                  </div>
+                  <div class="content-info__item body-1 color-gray-2">
+                    <div class="icon">
+                      <img
+                        src="./assets/images/icons/icon-phone-black.svg"
+                        alt=""
+                      />
+                    </div>
+                    +84 23 5391 7979
+                  </div>
+                  <div class="content-info__item body-1 color-gray-2">
+                    <div class="icon">
+                      <img
+                        src="./assets/images/icons/icon-mail-black.svg"
+                        alt=""
+                      />
+                    </div>
+                    info.ha@nestahotel.com.vn
+                  </div>
+                </div>
+                <div
+                  class="btn-wrapper d-flex align-items-center justify-content-between"
+                >
+                  <a href="#" class="button-global">
+                    <span>đặt phòng</span>
+                  </a>
+                  <a
+                    href="./accommodation-detail.html"
+                    class="btn-arrow text-uppercase color-black"
+                  >
+                    <span>chi tiết</span>
+                    <div class="icon">
+                      <svg
+                        width="14"
+                        height="11"
+                        viewBox="0 0 14 11"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
+                          stroke="#181819"
+                          stroke-linejoin="bevel"
+                        />
+                      </svg>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              class="accommodation-item filter-item"
+              data-filter="type-2"
+              data-fade-item
+            >
+              <a href="./accommodation-detail.html" class="image">
+                <img src="./assets/images/del/news-1.jpg" alt="" />
+              </a>
+              <div class="content">
+                <a
+                  href="./accommodation-detail.html"
+                  class="content-title body-20-sm color-gray-2"
+                >
+                  Nesta Danang Hotel
+                </a>
+                <div class="content-info">
+                  <div class="content-info__item body-1 color-gray-2">
+                    <div class="icon">
+                      <img
+                        src="./assets/images/icons/icon-location-black.svg"
+                        alt=""
+                      />
+                    </div>
+                    268 Võ Nguyên Giáp, Phường Ngũ Hành Sơn, Đà Nẵng
+                  </div>
+                  <div class="content-info__item body-1 color-gray-2">
+                    <div class="icon">
+                      <img
+                        src="./assets/images/icons/icon-phone-black.svg"
+                        alt=""
+                      />
+                    </div>
+                    +84 236 2658 888
+                  </div>
+                  <div class="content-info__item body-1 color-gray-2">
+                    <div class="icon">
+                      <img
+                        src="./assets/images/icons/icon-mail-black.svg"
+                        alt=""
+                      />
+                    </div>
+                    infodanang@nestahotel.com.vn
+                  </div>
+                </div>
+                <div
+                  class="btn-wrapper d-flex align-items-center justify-content-between"
+                >
+                  <a href="#" class="button-global">
+                    <span>đặt phòng</span>
+                  </a>
+                  <a
+                    href="./accommodation-detail.html"
+                    class="btn-arrow text-uppercase color-black"
+                  >
+                    <span>chi tiết</span>
+                    <div class="icon">
+                      <svg
+                        width="14"
+                        height="11"
+                        viewBox="0 0 14 11"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
+                          stroke="#181819"
+                          stroke-linejoin="bevel"
+                        />
+                      </svg>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              class="accommodation-item filter-item"
+              data-filter="type-2"
+              data-fade-item
+            >
+              <a href="./accommodation-detail.html" class="image">
+                <img src="./assets/images/del/news-1.jpg" alt="" />
+              </a>
+              <div class="content">
+                <a
+                  href="./accommodation-detail.html"
+                  class="content-title body-20-sm color-gray-2"
+                >
+                  Nesta Danang Hotel
+                </a>
+                <div class="content-info">
+                  <div class="content-info__item body-1 color-gray-2">
+                    <div class="icon">
+                      <img
+                        src="./assets/images/icons/icon-location-black.svg"
+                        alt=""
+                      />
+                    </div>
+                    268 Võ Nguyên Giáp, Phường Ngũ Hành Sơn, Đà Nẵng
+                  </div>
+                  <div class="content-info__item body-1 color-gray-2">
+                    <div class="icon">
+                      <img
+                        src="./assets/images/icons/icon-phone-black.svg"
+                        alt=""
+                      />
+                    </div>
+                    +84 236 2658 888
+                  </div>
+                  <div class="content-info__item body-1 color-gray-2">
+                    <div class="icon">
+                      <img
+                        src="./assets/images/icons/icon-mail-black.svg"
+                        alt=""
+                      />
+                    </div>
+                    infodanang@nestahotel.com.vn
+                  </div>
+                </div>
+                <div
+                  class="btn-wrapper d-flex align-items-center justify-content-between"
+                >
+                  <a href="#" class="button-global">
+                    <span>đặt phòng</span>
+                  </a>
+                  <a
+                    href="./accommodation-detail.html"
+                    class="btn-arrow text-uppercase color-black"
+                  >
+                    <span>chi tiết</span>
+                    <div class="icon">
+                      <svg
+                        width="14"
+                        height="11"
+                        viewBox="0 0 14 11"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
+                          stroke="#181819"
+                          stroke-linejoin="bevel"
+                        />
+                      </svg>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- layout -->
+
+    <!-- footer -->
+    <script>
+      fetch("./components/footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer").innerHTML = data;
+        });
+    </script>
+    <footer id="footer" class="footer"></footer>
+    <!-- end footer -->
+    <!-- end layout -->
+
+    <script src="./assets/libs/jquery-3.7.1.js"></script>
+    <script src="./assets/libs/lenis.min.js"></script>
+    <script src="./assets/libs/gsap.min.js"></script>
+    <script src="./assets/libs/ScrollTrigger.min.js"></script>
+    <script src="./assets/libs/SplitText.min.js"></script>
+    <script src="./assets/libs/bootstrap.bundle.min.js"></script>
+    <script src="./assets/libs/moment.min.js"></script>
+    <script src="./assets/libs/imagesloaded.pkgd.min.js"></script>
+    <script src="./assets/libs/lightpick.min.js"></script>
+    <script src="./assets/libs/swiper-bundle.min.js"></script>
+    <script src="./assets/libs/glightbox.min.js"></script>
+    <!-- import custom js -->
+    <script type="module" src="./assets/main/js/script.min.js"></script>
+
+    <!-- end import custom js -->
+  </body>
+</html>

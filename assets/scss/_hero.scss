@@ -1,0 +1,202 @@
+.hero {
+  &-image,
+  &-option-slider {
+    position: relative;
+    width: 100%;
+    height: 100svh;
+    overflow: hidden;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        linear-gradient(
+          270deg,
+          rgba(0, 0, 0, 0) 47.67%,
+          rgba(0, 0, 0, 0.8) 97.09%
+        ),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 14.88%);
+
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    &.not-has-content {
+      &::before {
+        display: none;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &-slider-video {
+    position: relative;
+    width: 100%;
+    height: 100svh;
+    overflow: hidden;
+    video {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+    }
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform: scale(1.25);
+      object-fit: cover;
+
+      @media (max-width: 1400px) {
+        height: 100vh;
+        width: 177.78vh;
+        transform: scale(1);
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  &-image {
+    position: relative;
+    width: 100%;
+    height: 100svh;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &-slider {
+    &-img {
+      width: 100%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  .slider-content-wrapper {
+    position: absolute;
+    z-index: 3;
+    left: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+    align-items: stretch;
+    display: flex;
+    gap: 24px;
+    @media (max-width: 991px) {
+      left: 24px;
+      top: auto;
+      transform: translate(0, 0);
+      bottom: 24px;
+      max-width: calc(100% - 48px);
+    }
+    .current-tag {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 13px;
+      line-height: 20px;
+      font-weight: 600;
+      color: var(--color-gray-2);
+      text-transform: uppercase;
+      padding: 8px 16px;
+      background-color: var(--color-white);
+      border-radius: 20px;
+      margin-bottom: 24px;
+    }
+    .current-title {
+      font-family: var(--font-heading);
+      font-size: 56px;
+      line-height: 64px;
+      color: var(--color-white);
+      text-transform: uppercase;
+      @media (max-width: 991px) {
+        font-size: 32px;
+        line-height: 40px;
+      }
+    }
+  }
+  .slider-content-main {
+    .slider-pagination {
+      font-family: var(--font-body);
+      color: var(--color-white);
+      margin-top: 24px;
+      padding-left: 2px;
+      display: flex;
+      align-items: center;
+      gap: 1px;
+      font-size: 13px;
+      line-height: 20px;
+
+      font-weight: 600;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      transform: translateY(20px);
+      &.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      span {
+        text-transform: uppercase;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+  .slider-content-line-vertical {
+    width: 1px;
+    background-color: transparent;
+    display: block;
+    flex-shrink: 0;
+    position: relative;
+    @media (max-width: 991px) {
+      display: none;
+    }
+    &.active {
+      &::before {
+        height: 100%;
+      }
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 0%;
+      background-color: var(--color-white);
+      transition: height 1s ease;
+    }
+  }
+  .slider-content-import {
+    height: auto;
+  }
+  .slider-pagination {
+    &.swiper-pagination-lock {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,125 @@
+.section-experience {
+  background-color: var(--color-secondary-1);
+  &.member-sec {
+    .col-content {
+      padding: 40px 90px;
+
+      @media (max-width: 991px) {
+        padding: 0 0 40px 0;
+      }
+    }
+  }
+  .section-wrapper {
+    padding: 40px 80px;
+
+    @media (max-width: 991px) {
+      padding: 40px 24px;
+    }
+  }
+
+  .col-image {
+    max-width: calc(calc(6 / 9) * 100%);
+    width: 100%;
+    margin-left: auto;
+
+    @media (max-width: 991px) {
+      max-width: 100%;
+    }
+
+    .image {
+      width: 100%;
+      aspect-ratio: 625 / 600;
+      border-radius: 20px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .col-content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+    z-index: 2;
+    max-width: calc(calc(6 / 9) * 100%);
+    background-color: #fff;
+    transform: translateX(calc(-1 * calc(2 / 12) * 100% - 40px));
+    border-radius: 20px;
+    padding: 40px 72px;
+    top: 32px;
+    @media screen and (min-width: 1500px) {
+      max-width: 625px;
+    }
+
+    @media (max-width: 991px) {
+      position: unset;
+      max-width: 100%;
+      background-color: transparent;
+      transform: none;
+      padding: 0 0 40px 0;
+    }
+
+    .tag {
+      text-align: center;
+    }
+    .title {
+      text-align: center;
+      .line {
+        line-height: 1.3;
+      }
+    }
+    .desc {
+      text-align: center;
+    }
+    .btn-wrapper {
+      margin: 64px auto 0;
+
+      @media (max-width: 991px) {
+        margin: 16px auto 0;
+      }
+    }
+  }
+  .col-image-one {
+    border-radius: 20px;
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 382 / 485;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .col-wrap {
+    display: flex;
+    position: relative;
+    margin-top: 90px;
+
+    @media (max-width: 991px) {
+      margin-top: 0;
+      flex-direction: column;
+    }
+  }
+}
+
+.image-parallax {
+  overflow: hidden;
+
+  &.box-parallax-top {
+    img {
+      transform: translateY(-10%);
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 120% !important;
+    object-fit: cover;
+  }
+}

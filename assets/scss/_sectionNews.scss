@@ -1,0 +1,117 @@
+.section-news.no-spacing-top .news-wrapper {
+  padding-top: 0;
+
+  @media (max-width: 991px) {
+    padding-top: 48px;
+  }
+}
+
+.news {
+  &-wrapper {
+    padding: 80px;
+    background-color: var(--color-secondary-1);
+
+    @media (max-width: 991px) {
+      padding: 48px 24px;
+    }
+
+    .section-top {
+      margin-bottom: 48px;
+
+      @media (max-width: 991px) {
+        margin-bottom: 32px;
+      }
+    }
+  }
+
+  &-item {
+    position: relative;
+
+    &:hover {
+      img {
+        transform: scale(1.03);
+      }
+
+      .content-title {
+        color: var(--color-primary-3);
+      }
+    }
+
+    .image {
+      width: 100%;
+      aspect-ratio: 400 / 216;
+      border-radius: 12px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s cubic-bezier(0, 0, 0.58, 1);
+      }
+    }
+
+    .content {
+      margin-top: 32px;
+
+      @media (max-width: 991px) {
+        margin-top: 24px;
+      }
+
+      &-title {
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 600;
+        transition: all 0.4s ease;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      &-desc {
+        margin-top: 20px;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+
+        @media (max-width: 991px) {
+          margin-top: 12px;
+        }
+      }
+    }
+
+    .tag {
+      padding: 8px 16px;
+      background-color: var(--color-white);
+      border-radius: 20px;
+      // width: max-content;
+      // max-width: 80%;
+
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      z-index: 2;
+      white-space: nowrap;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &-main {
+    position: relative;
+
+    .wrapper-arrows {
+      @media (max-width: 991px) {
+        margin-top: 32px;
+      }
+    }
+  }
+}

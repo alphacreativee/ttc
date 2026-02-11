@@ -1,0 +1,21 @@
+.section-booking {
+  background-color: var(--color-white);
+
+  .section-wrapper {
+    padding: 160px 0 80px;
+  }
+
+  h1.title {
+    margin-bottom: 24px;
+    max-width: 1136px;
+    margin: 0 auto;
+
+    @media (max-width: 47.937em) {
+      padding: 0 16px;
+    }
+
+    @media (max-width: 991px) {
+      margin-bottom: 10px;
+    }
+  }
+}

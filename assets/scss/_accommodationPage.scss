@@ -1,0 +1,146 @@
+.section-accommodation {
+  .section-wrapper {
+    padding: 80px;
+
+    @media (max-width: 991px) {
+      padding: 48px 24px;
+    }
+  }
+
+  .filter {
+    &-section {
+      margin-bottom: 45px;
+
+      @media (max-width: 991px) {
+        margin-bottom: 32px;
+      }
+
+      @media (max-width: 767px) {
+        flex-direction: column;
+        gap: 32px;
+        align-items: flex-start !important;
+
+        position: sticky;
+        top: 8px;
+        z-index: 5;
+      }
+    }
+
+    &-list-button {
+      gap: 8px;
+
+      .filter-button {
+        padding: 8px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 20px;
+        backdrop-filter: blur(65px);
+        margin: 0;
+        border: 1px solid rgba(64, 64, 64, 0.3);
+        transition: all 0.4s ease;
+        cursor: pointer;
+
+        &.active {
+          background-color: var(--color-black);
+          color: var(--color-white);
+          pointer-events: none;
+        }
+
+        &:hover {
+          border-color: var(--color-black);
+        }
+      }
+    }
+  }
+
+  .accommodation-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 80px 24px;
+
+    @media (max-width: 991px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 48px 24px;
+    }
+
+    @media (max-width: 767px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.accommodation-item {
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  box-shadow: 0px 20px 15px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+
+  .image {
+    width: 100%;
+    aspect-ratio: 410 / 313;
+    overflow: hidden;
+
+    &:hover {
+      img {
+        transform: scale(1.05);
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s cubic-bezier(0, 0, 0.58, 1);
+    }
+  }
+
+  .content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    .content-title {
+      margin-bottom: 12px;
+      transition: all 0.4s ease;
+
+      &:hover {
+        color: var(--color-primary-3);
+      }
+    }
+
+    .content-info {
+      margin-bottom: 32px;
+
+      &__item {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+
+        &:not(:first-child) {
+          margin-top: 12px;
+        }
+
+        .icon {
+          width: 16px;
+          min-width: 16px;
+          height: 16px;
+          transform: translateY(5px);
+        }
+      }
+    }
+
+    .btn-wrapper {
+      margin-top: auto;
+
+      .button-global {
+        padding: 8px 20px 7px;
+      }
+    }
+  }
+}

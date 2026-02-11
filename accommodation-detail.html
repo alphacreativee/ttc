@@ -1,0 +1,2654 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Khách sạn chi tiết</title>
+    <!-- import favicon -->
+    <link
+      rel="icon"
+      href="./assets/images/icons/favicon.ico"
+      type="image/x-icon"
+    />
+    <!-- meta -->
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="" />
+    <!-- meta -->
+    <link rel="stylesheet" href="./assets/libs/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/libs/lenis.css" />
+    <link rel="stylesheet" href="./assets/libs/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/libs/glightbox.min.css" />
+    <link rel="stylesheet" href="./assets/libs/lightpick.min.css" />
+    <!-- end meta -->
+    <!-- link custom css page -->
+    <link rel="stylesheet" href="./assets/fonts/montserrat/font.css" />
+    <link rel="stylesheet" href="./assets/fonts/trajan-pro/font.css" />
+    <link rel="stylesheet" href="./assets/main/css/style.min.css" />
+    <!-- end link custom css page -->
+    <!-- scrollRestoration -->
+    <script>
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+    </script>
+  </head>
+  <body>
+    <!-- layout -->
+    <!-- header -->
+    <script>
+      fetch("./components/header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header").innerHTML = data;
+          const currentPath = window.location.pathname || "/";
+
+          const navLinks = document.querySelectorAll(".header-menu ul>li>a");
+          navLinks.forEach((link) => {
+            const linkPath = link.getAttribute("href");
+
+            // Normalize paths for comparison
+            let normalizedCurrentPath = currentPath;
+            let normalizedLinkPath = linkPath;
+
+            // Remove leading "./" from link path
+            if (normalizedLinkPath.startsWith("./")) {
+              normalizedLinkPath = normalizedLinkPath.substring(1);
+            }
+
+            // Get the last segment of the path
+            const currentSegment = normalizedCurrentPath.split("/").pop() || "";
+            const linkSegment = normalizedLinkPath.split("/").pop() || "";
+
+            // Check if current path is root or ends with /
+            const isRootPath =
+              currentPath === "/" ||
+              currentPath.endsWith("/") ||
+              currentSegment === "";
+
+            // Check if link is home/index
+            const isHomeLink =
+              linkPath === "/" ||
+              linkPath === "./" ||
+              linkPath === "./index.html" ||
+              linkPath === "index.html" ||
+              linkSegment === "index.html";
+
+            // Match logic
+            const isMatch =
+              normalizedLinkPath === normalizedCurrentPath || // Exact match
+              currentSegment === linkSegment || // Segment match
+              (isRootPath && isHomeLink) || // Root path matches home link
+              (currentPath.endsWith(normalizedLinkPath) &&
+                normalizedLinkPath !== "/");
+
+            if (isMatch) {
+              link.classList.add("active");
+            }
+          });
+        });
+    </script>
+    <header id="header"></header>
+    <!-- end header -->
+    <main>
+      <section class="hero">
+        <div class="container-fluid p-0">
+          <!-- option image -->
+          <div class="hero-image d-none">
+            <img src="./assets/images/del/banner-1.webp" alt="" />
+          </div>
+          <!-- end option image -->
+          <!-- option slider change content -->
+          <div class="hero-option-slider">
+            <div class="swiper hero-slider h-100">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="hero-slider-img">
+                    <img src="./assets/images/del/banner-1.webp" alt="" />
+                  </div>
+                  <div class="hero-slider-content d-none">
+                    <div class="slider-tag">Nesta Celia DaNang</div>
+                    <div class="slider-title">
+                      Your <br />sky by <br />the sea
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="hero-slider-img">
+                    <img src="./assets/images/del/banner-2.webp" alt="" />
+                  </div>
+                  <div class="hero-slider-content d-none">
+                    <div class="slider-tag">Nesta The Grand Haonam</div>
+                    <div class="slider-title">
+                      Luxury and <br />Tranquility Amid <br />Hanoi’s Pulse
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="hero-slider-img">
+                    <img src="./assets/images/del/banner-3.webp" alt="" />
+                  </div>
+                  <div class="hero-slider-content d-none">
+                    <div class="slider-tag">NESTA HOI AN</div>
+                    <div class="slider-title">
+                      Peace in<br />
+                      the Land <br />of Heritage
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slider-content-wrapper">
+            <div class="slider-content-line-vertical"></div>
+            <div class="slider-content-main">
+              <div class="slider-content-import"></div>
+              <div class="slider-pagination"></div>
+            </div>
+          </div>
+          <!-- end option slider change content -->
+          <!-- option video -->
+          <div class="hero-video-banner d-none">
+            <video
+              class="hero-video"
+              autoplay
+              loop
+              muted
+              playsinline
+              poster="./assets/images/del/banner-1.webp"
+            >
+              <source src="./assets/images/del/banner.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <!-- end option video -->
+          <div class="booking-form-wrapper">
+            <div class="btn-booking-close">
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 13 13"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M12.3535 0.353516L0.353516 12.3535" stroke="#181819" />
+                <path d="M0.353516 0.353516L12.3535 12.3535" stroke="#181819" />
+              </svg>
+            </div>
+            <div class="booking-form-container">
+              <form action="">
+                <div class="booking-form-item">
+                  <div class="dropdown-custom-select select-destination">
+                    <div
+                      class="dropdown-custom-btn d-flex align-items-center justify-content-between"
+                    >
+                      <div
+                        class="d-flex align-items-center dropdown-custom-label gap-2"
+                      >
+                        <div class="icon flex-shrink-0">
+                          <img
+                            src="./assets/images/icons/icon-destination.svg"
+                            alt=""
+                          />
+                        </div>
+                        <div class="dropdown-custom-text">Điểm đến</div>
+                      </div>
+                      <div class="icon-arrow">
+                        <img
+                          src="./assets/images/icons/icon-arrow-down.svg"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                    <div class="dropdown-custom-menu">
+                      <div class="dropdown-custom-item">
+                        Nesta The Grand Haonam
+                      </div>
+                      <div class="dropdown-custom-item">Nesta Hanoi Hotel</div>
+                      <div class="dropdown-custom-item">
+                        Nesta Celia Danang Hotel
+                      </div>
+                      <div class="dropdown-custom-item">Nesta Danang Hotel</div>
+                      <div class="dropdown-custom-item">
+                        Nesta Hoian Resort & Spa
+                      </div>
+                      <div class="dropdown-custom-item">
+                        Nesta Valley Dalat Hotel
+                      </div>
+                      <div class="dropdown-custom-item">Nesta Saigon Hotel</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="booking-form-item">
+                  <div
+                    class="booking-calendar d-flex align-items-center justify-content-between"
+                  >
+                    <div class="d-flex align-items-center gap-2">
+                      <div class="icon flex-shrink-0">
+                        <img
+                          src="./assets/images/icons/icon-calendar.svg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="booking-time d-flex align-items-center">
+                        <input type="text" id="checkInDate" />
+                        <span>-</span>
+                        <input type="text" id="checkOutDate" />
+                      </div>
+                    </div>
+                    <div class="icon-arrow d-none">
+                      <img
+                        src="./assets/images/icons/icon-arrow-down.svg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="booking-form-item">
+                  <div class="select-people">
+                    <div
+                      class="select-people-wrapper d-flex align-items-center gap-2"
+                    >
+                      <div class="icon flex-shrink-0">
+                        <img
+                          src="./assets/images/icons/icon-people.svg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="label">
+                        <span class="adult-value">1</span> Người lớn,
+                        <span class="child-value">0</span> Trẻ em
+                      </div>
+                    </div>
+                    <div class="select-box">
+                      <div class="adult">
+                        <div class="label">Người lớn</div>
+                        <div class="select">
+                          <div class="min">-</div>
+                          <div class="val">1</div>
+                          <div class="plus">+</div>
+                        </div>
+                      </div>
+                      <div class="child">
+                        <div class="label">Trẻ em</div>
+                        <div class="select">
+                          <div class="min">-</div>
+                          <div class="val">0</div>
+                          <div class="plus">+</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="booking-form-item">
+                  <div
+                    class="booking-promotion d-flex align-items-center gap-2"
+                  >
+                    <div class="icon flex-shrink-0">
+                      <img
+                        src="./assets/images/icons/icon-promotion.svg"
+                        alt=""
+                      />
+                    </div>
+                    <input type="text" placeholder="Mã khuyến mãi" />
+                  </div>
+                </div>
+                <div
+                  class="booking-form-item button-find-room d-flex justify-content-end"
+                >
+                  <button class="button-global">
+                    <span>tìm phòng</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="accommodation-detail" section-fade-each-item>
+        <div class="section-wrapper row g-0">
+          <div class="col-lg-6 col-md-12 col-left">
+            <div data-fade-item>
+              <h2 class="title heading-1 color-black effect-line-mobile">
+                nesta the grand haonam
+              </h2>
+              <div class="desc body-1 color-black data-fade-in-mobile">
+                Tọa lạc tại vị trí đắc địa trên tuyến phố Hào Nam sầm uất, Nesta
+                – The Grand Haonam là tổ hợp hiện đại bao gồm trung tâm thương
+                mại, văn phòng, căn hộ cao cấp và nhà ở thấp tầng. Không chỉ
+                mang đến không gian sống tiện nghi, dự án còn kết nối dễ dàng
+                đến các khu vực thương mại, văn hóa.
+              </div>
+            </div>
+
+            <ul
+              class="contact body-1 color-black data-fade-in-mobile"
+              data-fade-item
+            >
+              <li>
+                <div class="icon">
+                  <img
+                    src="./assets/images/icons/icon-location-black.svg"
+                    alt=""
+                  />
+                </div>
+                Số 83 Hào Nam, Phường Ô Chợ Dừa, Hà Nội
+              </li>
+              <li>
+                <div class="icon">
+                  <img
+                    src="./assets/images/icons/icon-phone-black.svg"
+                    alt=""
+                  />
+                </div>
+                <a href="tel:+84982822216">+84 982 822 216</a>
+              </li>
+              <li>
+                <div class="icon">
+                  <img src="./assets/images/icons/icon-mail-black.svg" alt="" />
+                </div>
+                <a href="mailto:fo.terra@nestahotel.com.vn"
+                  >fo.terra@nestahotel.com.vn</a
+                >
+              </li>
+            </ul>
+            <div
+              class="facilities body-1 color-black data-fade-in-mobile"
+              data-fade-item
+            >
+              <h4>TIỆN ÍCH CHUNG</h4>
+              <div class="facilities-wrapper">
+                <!-- desktop hiện 9 items / xuống mobile là 6 items -->
+                <ul class="facilities-main facilities-list">
+                  <li>
+                    <div class="icon">
+                      <img
+                        src="./assets/images/icons/icon-location-black.svg"
+                        alt=""
+                      />
+                    </div>
+                    Lễ tân 24/7
+                  </li>
+                  <li>
+                    <div class="icon">
+                      <img
+                        src="./assets/images/icons/icon-location-black.svg"
+                        alt=""
+                      />
+                    </div>
+                    Buffet sáng
+                  </li>
+                  <li>
+                    <div class="icon">
+                      <img
+                        src="./assets/images/icons/icon-location-black.svg"
+                        alt=""
+                      />
+                    </div>
+                    Wifi tốc độ cao
+                  </li>
+                  <li>
+                    <div class="icon">
+                      <img
+                        src="./assets/images/icons/icon-location-black.svg"
+                        alt=""
+                      />
+                    </div>
+                    Bàn làm việc
+                  </li>
+                  <li>
+                    <div class="icon">
+                      <img
+                        src="./assets/images/icons/icon-location-black.svg"
+                        alt=""
+                      />
+                    </div>
+                    Đón tiễn sân bay
+                  </li>
+                  <li>
+                    <div class="icon">
+                      <img
+                        src="./assets/images/icons/icon-location-black.svg"
+                        alt=""
+                      />
+                    </div>
+                    Tivi thông minh
+                  </li>
+                  <li>
+                    <div class="icon">
+                      <img
+                        src="./assets/images/icons/icon-location-black.svg"
+                        alt=""
+                      />
+                    </div>
+                    Dịch vụ spa
+                  </li>
+                  <li>
+                    <div class="icon">
+                      <img
+                        src="./assets/images/icons/icon-location-black.svg"
+                        alt=""
+                      />
+                    </div>
+                    Phòng tắm riêng
+                  </li>
+                  <li>
+                    <div class="icon">
+                      <img
+                        src="./assets/images/icons/icon-location-black.svg"
+                        alt=""
+                      />
+                    </div>
+                    Lễ tân 24/7
+                  </li>
+                </ul>
+                <ul class="facilities-more facilities-list">
+                  <li>
+                    <div class="icon">
+                      <img
+                        src="./assets/images/icons/icon-location-black.svg"
+                        alt=""
+                      />
+                    </div>
+                    Buffet sáng
+                  </li>
+                  <li>
+                    <div class="icon">
+                      <img
+                        src="./assets/images/icons/icon-location-black.svg"
+                        alt=""
+                      />
+                    </div>
+                    Wifi tốc độ cao
+                  </li>
+                  <li>
+                    <div class="icon">
+                      <img
+                        src="./assets/images/icons/icon-location-black.svg"
+                        alt=""
+                      />
+                    </div>
+                    Bàn làm việc
+                  </li>
+                </ul>
+                <div
+                  class="facilities-view-more"
+                  data-read-more="XEM THÊM"
+                  data-read-less="RÚT GỌN"
+                >
+                  <span>XEM THÊM</span>
+
+                  <div class="icon">
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6 2V10"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M10 6L2 6"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M10 6L2 6"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-6 col-md-12 col-right data-fade-in-mobile"
+            data-fade-item
+          >
+            <div class="wrapper-slider-parallax position-relative">
+              <div class="swiper" slider-parallax slider-arrow>
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="image">
+                      <img src="./assets/images/del/news-1.jpg" alt="" />
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image">
+                      <img src="./assets/images/del/news-1.jpg" alt="" />
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image">
+                      <img src="./assets/images/del/news-1.jpg" alt="" />
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image">
+                      <img src="./assets/images/del/news-1.jpg" alt="" />
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image">
+                      <img src="./assets/images/del/news-1.jpg" alt="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-arrows">
+                <div class="arrow-prev swiper-arrow">
+                  <svg
+                    width="14"
+                    height="11"
+                    viewBox="0 0 14 11"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
+                      stroke="currentColor"
+                      stroke-linejoin="bevel"
+                    />
+                  </svg>
+                </div>
+                <div class="arrow-next swiper-arrow">
+                  <svg
+                    width="14"
+                    height="11"
+                    viewBox="0 0 14 11"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
+                      stroke="currentColor"
+                      stroke-linejoin="bevel"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="accommodation-type">
+        <div class="section-wrapper">
+          <h2 class="title heading-1 color-black effect-line">HẠNG PHÒNG</h2>
+          <div class="accommodation-type__list">
+            <div class="accommodation-item__horizontal data-fade-in">
+              <div class="slider-wrapper wrapper-slider-parallax">
+                <div class="swiper" slider-parallax slider-arrow>
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="image">
+                        <img src="./assets/images/del/news-1.jpg" alt="" />
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="image">
+                        <img src="./assets/images/del/news-1.jpg" alt="" />
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="image">
+                        <img src="./assets/images/del/news-1.jpg" alt="" />
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="image">
+                        <img src="./assets/images/del/news-1.jpg" alt="" />
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="image">
+                        <img src="./assets/images/del/news-1.jpg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-arrows">
+                  <div class="arrow-prev swiper-arrow">
+                    <svg
+                      width="14"
+                      height="11"
+                      viewBox="0 0 14 11"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
+                        stroke="currentColor"
+                        stroke-linejoin="bevel"
+                      />
+                    </svg>
+                  </div>
+                  <div class="arrow-next swiper-arrow">
+                    <svg
+                      width="14"
+                      height="11"
+                      viewBox="0 0 14 11"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
+                        stroke="currentColor"
+                        stroke-linejoin="bevel"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="content">
+                <h4 class="content-title heading-3 color-black">
+                  3-bedroom apartment
+                </h4>
+                <div class="content-info">
+                  <div class="content-info__item body-1 color-gray-2">
+                    <div class="icon">
+                      <img src="./assets/images/icons/icon-expand.svg" alt="" />
+                    </div>
+                    100m2
+                  </div>
+                  <div class="content-info__item body-1 color-gray-2">
+                    <div class="icon">
+                      <img src="./assets/images/icons/icon-bed.svg" alt="" />
+                    </div>
+                    2 phòng ngủ
+                  </div>
+                  <div class="content-info__item body-1 color-gray-2">
+                    <div class="icon">
+                      <img
+                        src="./assets/images/icons/icon-photograph.svg"
+                        alt=""
+                      />
+                    </div>
+                    Hướng phố
+                  </div>
+                  <div class="content-info__item body-1 color-gray-2">
+                    <div class="icon">
+                      <img src="./assets/images/icons/icon-users.svg" alt="" />
+                    </div>
+                    2 người
+                  </div>
+                </div>
+                <div class="content-desc body-1 color-black">
+                  3-Bedroom Apartment được thiết kế tinh tế, hài hoà và sang
+                  trọng, đáp ứng mọi nhu cầu của khách hàng từ mọi lứa tuổi,
+                  trải nghiệm nơi đây đầy tuyệt vời khi ngắm nhìn thành phố
+                </div>
+                <div
+                  class="btn-wrapper d-flex align-items-center justify-content-between"
+                >
+                  <a href="#" class="button-global">
+                    <span>đặt phòng</span>
+                  </a>
+                  <div
+                    class="btn-arrow text-uppercase color-black"
+                    type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modal-accommodation-detail-1"
+                  >
+                    <span>chi tiết</span>
+                    <div class="icon">
+                      <svg
+                        width="14"
+                        height="11"
+                        viewBox="0 0 14 11"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
+                          stroke="#181819"
+                          stroke-linejoin="bevel"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accommodation-item__horizontal data-fade-in">
+              <div class="slider-wrapper wrapper-slider-parallax">
+                <div class="swiper" slider-parallax slider-arrow>
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="image">
+                        <img src="./assets/images/del/news-1.jpg" alt="" />
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="image">
+                        <img src="./assets/images/del/news-1.jpg" alt="" />
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="image">
+                        <img src="./assets/images/del/news-1.jpg" alt="" />
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="image">
+                        <img src="./assets/images/del/news-1.jpg" alt="" />
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="image">
+                        <img src="./assets/images/del/news-1.jpg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-arrows">
+                  <div class="arrow-prev swiper-arrow">
+                    <svg
+                      width="14"
+                      height="11"
+                      viewBox="0 0 14 11"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
+                        stroke="currentColor"
+                        stroke-linejoin="bevel"
+                      />
+                    </svg>
+                  </div>
+                  <div class="arrow-next swiper-arrow">
+                    <svg
+                      width="14"
+                      height="11"
+                      viewBox="0 0 14 11"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
+                        stroke="currentColor"
+                        stroke-linejoin="bevel"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="content">
+                <h4 class="content-title heading-3 color-black">
+                  2-bedroom apartment (type b)
+                </h4>
+                <div class="content-info">
+                  <div class="content-info__item body-1 color-gray-2">
+                    <div class="icon">
+                      <img src="./assets/images/icons/icon-expand.svg" alt="" />
+                    </div>
+                    100m2
+                  </div>
+                  <div class="content-info__item body-1 color-gray-2">
+                    <div class="icon">
+                      <img src="./assets/images/icons/icon-bed.svg" alt="" />
+                    </div>
+                    2 phòng ngủ
+                  </div>
+                  <div class="content-info__item body-1 color-gray-2">
+                    <div class="icon">
+                      <img
+                        src="./assets/images/icons/icon-photograph.svg"
+                        alt=""
+                      />
+                    </div>
+                    Hướng phố
+                  </div>
+                  <div class="content-info__item body-1 color-gray-2">
+                    <div class="icon">
+                      <img src="./assets/images/icons/icon-users.svg" alt="" />
+                    </div>
+                    2 người
+                  </div>
+                </div>
+                <div class="content-desc body-1 color-black">
+                  2-Bedroom Apartment được thiết kế tinh tế, hài hoà và sang
+                  trọng, đáp ứng mọi nhu cầu của khách hàng từ mọi lứa tuổi,
+                  trải nghiệm nơi đây đầy tuyệt vời khi ngắm nhìn thành phố
+                </div>
+                <div
+                  class="btn-wrapper d-flex align-items-center justify-content-between"
+                >
+                  <a href="#" class="button-global">
+                    <span>đặt phòng</span>
+                  </a>
+                  <div
+                    class="btn-arrow text-uppercase color-black"
+                    type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modal-accommodation-detail-2"
+                  >
+                    <span>chi tiết</span>
+                    <div class="icon">
+                      <svg
+                        width="14"
+                        height="11"
+                        viewBox="0 0 14 11"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
+                          stroke="#181819"
+                          stroke-linejoin="bevel"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- modal accommodation type -->
+      <div
+        class="modal fade modal-accommodation-detail"
+        id="modal-accommodation-detail-1"
+        tabindex="-1"
+        aria-hidden="true"
+        data-lenis-prevent
+        modal-fade-each-item
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <button
+              type="button"
+              class="button-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 40 40"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11 20.5C15.1538 19.1364 19.3077 14.3636 19.3077 13M11 20.5C15.1538 21.8636 19.3077 26.6364 19.3077 28M11 20.5H29"
+                  stroke="currentColor"
+                  stroke-linejoin="bevel"
+                />
+              </svg>
+            </button>
+            <div class="modal-body">
+              <div class="modal-left" data-fade-item>
+                <div class="wrapper-slider-parallax">
+                  <div
+                    class="swiper"
+                    slider-parallax
+                    slider-arrow
+                    slider-change-label
+                  >
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide" data-title="Phòng khách">
+                        <div class="image">
+                          <img src="./assets/images/del/news-1.jpg" alt="" />
+                        </div>
+                      </div>
+                      <div class="swiper-slide" data-title="Phòng ngủ 1">
+                        <div class="image">
+                          <img src="./assets/images/del/news-1.jpg" alt="" />
+                        </div>
+                      </div>
+                      <div class="swiper-slide" data-title="Phòng ngủ 2">
+                        <div class="image">
+                          <img src="./assets/images/del/news-1.jpg" alt="" />
+                        </div>
+                      </div>
+                      <div class="swiper-slide" data-title="Phòng ngủ 3">
+                        <div class="image">
+                          <img src="./assets/images/del/news-1.jpg" alt="" />
+                        </div>
+                      </div>
+                      <div class="swiper-slide" data-title="Nhà vệ sinh">
+                        <div class="image">
+                          <img src="./assets/images/del/news-1.jpg" alt="" />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="slider-label">
+                      <div class="slider-title btn-body-font color-white"></div>
+                      <div
+                        class="slider-pagination btn-body-font color-white"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="swiper-arrows">
+                    <div class="arrow-prev swiper-arrow">
+                      <svg
+                        width="14"
+                        height="11"
+                        viewBox="0 0 14 11"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
+                          stroke="currentColor"
+                          stroke-linejoin="bevel"
+                        />
+                      </svg>
+                    </div>
+                    <div class="arrow-next swiper-arrow">
+                      <svg
+                        width="14"
+                        height="11"
+                        viewBox="0 0 14 11"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
+                          stroke="currentColor"
+                          stroke-linejoin="bevel"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="btn-wrapper d-none d-lg-block">
+                  <a href="#" class="button-global">
+                    <span>đặt phòng</span>
+                  </a>
+                </div>
+              </div>
+              <div class="modal-right">
+                <h4
+                  class="content-title heading-2 color-black"
+                  data-fade-item
+                  fade-item-line
+                >
+                  3-Bedroom Apartment
+                </h4>
+                <div class="content-info" data-fade-item>
+                  <div class="content-info__item body-1 color-gray-2">
+                    <div class="icon">
+                      <img src="./assets/images/icons/icon-expand.svg" alt="" />
+                    </div>
+                    100m2
+                  </div>
+                  <div class="content-info__item body-1 color-gray-2">
+                    <div class="icon">
+                      <img src="./assets/images/icons/icon-bed.svg" alt="" />
+                    </div>
+                    2 phòng ngủ
+                  </div>
+                  <div class="content-info__item body-1 color-gray-2">
+                    <div class="icon">
+                      <img
+                        src="./assets/images/icons/icon-photograph.svg"
+                        alt=""
+                      />
+                    </div>
+                    Hướng phố
+                  </div>
+                  <div class="content-info__item body-1 color-gray-2">
+                    <div class="icon">
+                      <img src="./assets/images/icons/icon-users.svg" alt="" />
+                    </div>
+                    2 người
+                  </div>
+                </div>
+                <div class="content-desc body-1 color-black" data-fade-item>
+                  Không gian tiện nghi với ánh sáng tự nhiên và bố cục gọn gàng,
+                  mang lại sự thoải mái cho mọi kỳ lưu trú dù ngắn hoặc dài
+                  ngày. Ghế bành thư giãn cùng bàn làm việc tiện dụng giúp bạn
+                  linh hoạt giữa những phút nghỉ ngơi và công việc.
+                </div>
+                <div class="facilities body-1 color-black" data-fade-item>
+                  <h4>TIỆN ÍCH CHUNG</h4>
+                  <div class="facilities-wrapper">
+                    <ul class="facilities-main facilities-list">
+                      <li>
+                        <div class="icon">
+                          <img
+                            src="./assets/images/icons/icon-location-black.svg"
+                            alt=""
+                          />
+                        </div>
+                        Lễ tân 24/7
+                      </li>
+                      <li>
+                        <div class="icon">
+                          <img
+                            src="./assets/images/icons/icon-location-black.svg"
+                            alt=""
+                          />
+                        </div>
+                        Buffet sáng
+                      </li>
+                      <li>
+                        <div class="icon">
+                          <img
+                            src="./assets/images/icons/icon-location-black.svg"
+                            alt=""
+                          />
+                        </div>
+                        Wifi tốc độ cao
+                      </li>
+                      <li>
+                        <div class="icon">
+                          <img
+                            src="./assets/images/icons/icon-location-black.svg"
+                            alt=""
+                          />
+                        </div>
+                        Bàn làm việc
+                      </li>
+                      <li>
+                        <div class="icon">
+                          <img
+                            src="./assets/images/icons/icon-location-black.svg"
+                            alt=""
+                          />
+                        </div>
+                        Đón tiễn sân bay
+                      </li>
+                      <li>
+                        <div class="icon">
+                          <img
+                            src="./assets/images/icons/icon-location-black.svg"
+                            alt=""
+                          />
+                        </div>
+                        Tivi thông minh
+                      </li>
+                      <li>
+                        <div class="icon">
+                          <img
+                            src="./assets/images/icons/icon-location-black.svg"
+                            alt=""
+                          />
+                        </div>
+                        Dịch vụ spa
+                      </li>
+                      <li>
+                        <div class="icon">
+                          <img
+                            src="./assets/images/icons/icon-location-black.svg"
+                            alt=""
+                          />
+                        </div>
+                        Phòng tắm riêng
+                      </li>
+                      <li>
+                        <div class="icon">
+                          <img
+                            src="./assets/images/icons/icon-location-black.svg"
+                            alt=""
+                          />
+                        </div>
+                        Lễ tân 24/7
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="btn-wrapper d-lg-none d-block">
+                  <a href="#" class="button-global">
+                    <span>đặt phòng</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="modal fade modal-accommodation-detail"
+        id="modal-accommodation-detail-2"
+        tabindex="-1"
+        aria-hidden="true"
+        data-lenis-prevent
+        modal-fade-each-item
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <button
+              type="button"
+              class="button-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 40 40"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11 20.5C15.1538 19.1364 19.3077 14.3636 19.3077 13M11 20.5C15.1538 21.8636 19.3077 26.6364 19.3077 28M11 20.5H29"
+                  stroke="currentColor"
+                  stroke-linejoin="bevel"
+                />
+              </svg>
+            </button>
+            <div class="modal-body">
+              <div class="modal-left" data-fade-item>
+                <div class="wrapper-slider-parallax">
+                  <div
+                    class="swiper"
+                    slider-parallax
+                    slider-arrow
+                    slider-change-label
+                  >
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide" data-title="Phòng khách">
+                        <div class="image">
+                          <img src="./assets/images/del/news-1.jpg" alt="" />
+                        </div>
+                      </div>
+                      <div class="swiper-slide" data-title="Phòng ngủ">
+                        <div class="image">
+                          <img src="./assets/images/del/news-1.jpg" alt="" />
+                        </div>
+                      </div>
+                      <div class="swiper-slide" data-title="Phòng tắm">
+                        <div class="image">
+                          <img src="./assets/images/del/news-1.jpg" alt="" />
+                        </div>
+                      </div>
+                      <div class="swiper-slide" data-title="Sân sau">
+                        <div class="image">
+                          <img src="./assets/images/del/news-1.jpg" alt="" />
+                        </div>
+                      </div>
+
+                      <div class="swiper-slide" data-title="Hồ bơi">
+                        <div class="image">
+                          <img src="./assets/images/del/news-1.jpg" alt="" />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="slider-label">
+                      <div class="slider-title btn-body-font color-white"></div>
+                      <div
+                        class="slider-pagination btn-body-font color-white"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="swiper-arrows">
+                    <div class="arrow-prev swiper-arrow">
+                      <svg
+                        width="14"
+                        height="11"
+                        viewBox="0 0 14 11"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
+                          stroke="currentColor"
+                          stroke-linejoin="bevel"
+                        />
+                      </svg>
+                    </div>
+                    <div class="arrow-next swiper-arrow">
+                      <svg
+                        width="14"
+                        height="11"
+                        viewBox="0 0 14 11"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
+                          stroke="currentColor"
+                          stroke-linejoin="bevel"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="btn-wrapper d-none d-lg-block">
+                  <a href="#" class="button-global">
+                    <span>đặt phòng</span>
+                  </a>
+                </div>
+              </div>
+              <div class="modal-right">
+                <h4
+                  class="content-title heading-2 color-black"
+                  data-fade-item
+                  fade-item-line
+                >
+                  2-Bedroom Apartment (TYPE B)
+                </h4>
+                <div class="content-info" data-fade-item>
+                  <div class="content-info__item body-1 color-gray-2">
+                    <div class="icon">
+                      <img src="./assets/images/icons/icon-expand.svg" alt="" />
+                    </div>
+                    100m2
+                  </div>
+                  <div class="content-info__item body-1 color-gray-2">
+                    <div class="icon">
+                      <img src="./assets/images/icons/icon-bed.svg" alt="" />
+                    </div>
+                    2 phòng ngủ
+                  </div>
+                  <div class="content-info__item body-1 color-gray-2">
+                    <div class="icon">
+                      <img
+                        src="./assets/images/icons/icon-photograph.svg"
+                        alt=""
+                      />
+                    </div>
+                    Hướng phố
+                  </div>
+                  <div class="content-info__item body-1 color-gray-2">
+                    <div class="icon">
+                      <img src="./assets/images/icons/icon-users.svg" alt="" />
+                    </div>
+                    2 người
+                  </div>
+                </div>
+                <div class="content-desc body-1 color-black" data-fade-item>
+                  Không gian tiện nghi với ánh sáng tự nhiên và bố cục gọn gàng,
+                  mang lại sự thoải mái cho mọi kỳ lưu trú dù ngắn hoặc dài
+                  ngày. Ghế bành thư giãn cùng bàn làm việc tiện dụng giúp bạn
+                  linh hoạt giữa những phút nghỉ ngơi và công việc.
+                </div>
+                <div class="facilities body-1 color-black" data-fade-item>
+                  <h4>TIỆN ÍCH CHUNG</h4>
+                  <div class="facilities-wrapper">
+                    <ul class="facilities-main facilities-list">
+                      <li>
+                        <div class="icon">
+                          <img
+                            src="./assets/images/icons/icon-location-black.svg"
+                            alt=""
+                          />
+                        </div>
+                        Lễ tân 24/7
+                      </li>
+                      <li>
+                        <div class="icon">
+                          <img
+                            src="./assets/images/icons/icon-location-black.svg"
+                            alt=""
+                          />
+                        </div>
+                        Buffet sáng
+                      </li>
+                      <li>
+                        <div class="icon">
+                          <img
+                            src="./assets/images/icons/icon-location-black.svg"
+                            alt=""
+                          />
+                        </div>
+                        Wifi tốc độ cao
+                      </li>
+                      <li>
+                        <div class="icon">
+                          <img
+                            src="./assets/images/icons/icon-location-black.svg"
+                            alt=""
+                          />
+                        </div>
+                        Bàn làm việc
+                      </li>
+                      <li>
+                        <div class="icon">
+                          <img
+                            src="./assets/images/icons/icon-location-black.svg"
+                            alt=""
+                          />
+                        </div>
+                        Đón tiễn sân bay
+                      </li>
+                      <li>
+                        <div class="icon">
+                          <img
+                            src="./assets/images/icons/icon-location-black.svg"
+                            alt=""
+                          />
+                        </div>
+                        Tivi thông minh
+                      </li>
+                      <li>
+                        <div class="icon">
+                          <img
+                            src="./assets/images/icons/icon-location-black.svg"
+                            alt=""
+                          />
+                        </div>
+                        Dịch vụ spa
+                      </li>
+                      <li>
+                        <div class="icon">
+                          <img
+                            src="./assets/images/icons/icon-location-black.svg"
+                            alt=""
+                          />
+                        </div>
+                        Phòng tắm riêng
+                      </li>
+                      <li>
+                        <div class="icon">
+                          <img
+                            src="./assets/images/icons/icon-location-black.svg"
+                            alt=""
+                          />
+                        </div>
+                        Lễ tân 24/7
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="btn-wrapper d-block d-lg-none">
+                  <a href="#" class="button-global">
+                    <span>đặt phòng</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end modal -->
+
+      <section class="featured-offers" section-fade-each-item>
+        <div class="section-wrapper">
+          <div
+            class="section-top d-flex align-items-center justify-content-between"
+          >
+            <h2 class="title heading-1 effect-line">ƯU ĐÃI NỔI BẬT</h2>
+          </div>
+          <div class="offer-main data-fade-in-mobile">
+            <div class="offer-slider slider-with-shadow position-relative">
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <a
+                      href="./offer-detail.html"
+                      class="offer-item"
+                      style="--height-desc: 50px"
+                      data-fade-item
+                    >
+                      <div class="tag btn-body-font color-gray-2">Tập đoàn</div>
+                      <div class="image">
+                        <img src="./assets/images/del/offer-1.jpg" alt="" />
+                      </div>
+                      <div class="content">
+                        <div class="content-title color-white body-20-sm">
+                          Ưu đãi tổ chức tiệc tất niên
+                        </div>
+                        <div class="content-desc body-1 color-white">
+                          Cùng nâng ly vì một năm trọn vẹn chỉ từ
+                          400.000VND/khách.
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a
+                      href="./offer-detail.html"
+                      class="offer-item"
+                      style="--height-desc: 50px"
+                      data-fade-item
+                    >
+                      <div class="tag btn-body-font color-gray-2">Tập đoàn</div>
+                      <div class="image">
+                        <img src="./assets/images/del/offer-2.jpg" alt="" />
+                      </div>
+                      <div class="content">
+                        <div class="content-title body-20-sm color-white">
+                          Miễn phí sử dụng hồ bơi tại Nesta Hoian Resort & Spa
+                        </div>
+                        <div class="content-desc body-1 color-white">
+                          Thả mình vào không gian trong lành đón nhận làn gió
+                          nhẹ nhàng
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a
+                      href="./offer-detail.html"
+                      class="offer-item"
+                      style="--height-desc: 50px"
+                      data-fade-item
+                    >
+                      <div class="tag btn-body-font color-gray-2">Tập đoàn</div>
+                      <div class="image">
+                        <img src="./assets/images/del/offer-3.jpg" alt="" />
+                      </div>
+                      <div class="content">
+                        <div class="content-title body-20-sm color-white">
+                          Soie Senses Spa
+                        </div>
+                        <div class="content-desc body-1 color-white">
+                          Tận hưởng phút giây yên bình, thư giãn từ bên tạo năng
+                          lượng cho cơ thể, Tận hưởng phút giây yên bình, thư
+                          giãn từ bên tạo năng lượng cho cơ thể
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-arrows">
+                <div class="arrow-prev swiper-arrow">
+                  <svg
+                    width="14"
+                    height="11"
+                    viewBox="0 0 14 11"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
+                      stroke="currentColor"
+                      stroke-linejoin="bevel"
+                    />
+                  </svg>
+                </div>
+                <div class="arrow-next swiper-arrow">
+                  <svg
+                    width="14"
+                    height="11"
+                    viewBox="0 0 14 11"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
+                      stroke="currentColor"
+                      stroke-linejoin="bevel"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="slider-gallery">
+        <!-- Phần hiển thị hình nền lớn + nội dung text -->
+        <div class="image-bg-list h-100">
+          <div class="slider-image-bg swiper h-100">
+            <div class="swiper-wrapper">
+              <!-- Slide 1 -->
+              <div class="swiper-slide">
+                <div class="image-bg">
+                  <img
+                    src="./assets/images/del/gallery-thumbnail-6.webp"
+                    alt=""
+                  />
+                </div>
+                <div class="thumbnail-content-wrapper d-none">
+                  <div class="name-room">hội họp</div>
+                  <div class="description">
+                    Hệ thống phòng họp của Nesta Hotel Group được thiết kế nhằm
+                    đáp ứng trọn vẹn nhu cầu tổ chức hội nghị, hội thảo và các
+                    buổi họp cấp cao trong một không gian chuyên nghiệp và tinh
+                    tế.
+                  </div>
+                  <a href="phong-hoi-nghi.html" class="btn-arrow">
+                    <span>chi tiết</span>
+                    <div class="icon">
+                      <svg
+                        width="14"
+                        height="11"
+                        viewBox="0 0 14 11"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
+                          stroke="white"
+                          stroke-linejoin="bevel"
+                        />
+                      </svg>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="swiper-slide">
+                <div class="image-bg">
+                  <img
+                    src="./assets/images/del/gallery-thumbnail-5.webp"
+                    alt=""
+                  />
+                </div>
+                <div class="thumbnail-content-wrapper d-none">
+                  <div class="name-room">nhà hàng kawa</div>
+                  <div class="description">
+                    Nhà hàng kawa mang đến trải nghiệm ẩm thực tinh tế với thực
+                    đơn đa dạng từ món Việt truyền thống đến các món Âu hiện
+                    đại, không gian ấm cúng và view đẹp.
+                  </div>
+                  <a href="phong-hoi-nghi.html" class="btn-arrow">
+                    <span>chi tiết</span>
+                    <div class="icon">
+                      <svg
+                        width="14"
+                        height="11"
+                        viewBox="0 0 14 11"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
+                          stroke="white"
+                          stroke-linejoin="bevel"
+                        />
+                      </svg>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="swiper-slide">
+                <div class="image-bg">
+                  <img
+                    src="./assets/images/del/gallery-thumbnail-4.webp"
+                    alt=""
+                  />
+                </div>
+                <div class="thumbnail-content-wrapper d-none">
+                  <div class="name-room">sự kiện</div>
+                  <div class="description">
+                    Không gian tổ chức sự kiện linh hoạt, sức chứa từ 50 – 500
+                    khách, phù hợp cho tiệc cưới, hội nghị, sinh nhật, team
+                    building với dịch vụ chuyên nghiệp.
+                  </div>
+                  <a href="phong-hoi-nghi.html" class="btn-arrow">
+                    <span>chi tiết</span>
+                    <div class="icon">
+                      <svg
+                        width="14"
+                        height="11"
+                        viewBox="0 0 14 11"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
+                          stroke="white"
+                          stroke-linejoin="bevel"
+                        />
+                      </svg>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Slide 4 -->
+              <div class="swiper-slide">
+                <div class="image-bg">
+                  <img
+                    src="./assets/images/del/gallery-thumbnail-3.webp"
+                    alt=""
+                  />
+                </div>
+                <div class="thumbnail-content-wrapper d-none">
+                  <div class="name-room">buffet sáng</div>
+                  <div class="description">
+                    Buffet sáng đa dạng hơn 80 món Á – Âu, nguyên liệu tươi
+                    ngon, không gian thoáng đãng giúp khởi đầu ngày mới tràn đầy
+                    năng lượng.
+                  </div>
+                  <a href="phong-hoi-nghi.html" class="btn-arrow">
+                    <span>chi tiết</span>
+                    <div class="icon">
+                      <svg
+                        width="14"
+                        height="11"
+                        viewBox="0 0 14 11"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
+                          stroke="white"
+                          stroke-linejoin="bevel"
+                        />
+                      </svg>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Slide 5 -->
+              <div class="swiper-slide">
+                <div class="image-bg">
+                  <img
+                    src="./assets/images/del/gallery-thumbnail-2.webp"
+                    alt=""
+                  />
+                </div>
+                <div class="thumbnail-content-wrapper d-none">
+                  <div class="name-room">phòng nghỉ</div>
+                  <div class="description">
+                    Các loại phòng từ Superior, Deluxe đến Suite sang trọng, nội
+                    thất hiện đại, đầy đủ tiện nghi, view thành phố hoặc sân
+                    vườn yên bình.
+                  </div>
+                  <a href="phong-hoi-nghi.html" class="btn-arrow">
+                    <span>chi tiết</span>
+                    <div class="icon">
+                      <svg
+                        width="14"
+                        height="11"
+                        viewBox="0 0 14 11"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
+                          stroke="white"
+                          stroke-linejoin="bevel"
+                        />
+                      </svg>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Slide 6 -->
+              <div class="swiper-slide">
+                <div class="image-bg">
+                  <img
+                    src="./assets/images/del/gallery-thumbnail-1.webp"
+                    alt=""
+                  />
+                </div>
+                <div class="thumbnail-content-wrapper d-none">
+                  <div class="name-room">sân vườn</div>
+                  <div class="description">
+                    Khu vườn xanh mát, hồ bơi ngoài trời, không gian thư giãn lý
+                    tưởng để tận hưởng những khoảnh khắc yên bình giữa lòng
+                    thành phố.
+                  </div>
+                  <a href="phong-hoi-nghi.html" class="btn-arrow">
+                    <span>chi tiết</span>
+                    <div class="icon">
+                      <svg
+                        width="14"
+                        height="11"
+                        viewBox="0 0 14 11"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
+                          stroke="white"
+                          stroke-linejoin="bevel"
+                        />
+                      </svg>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phần thumbnail nhỏ bên dưới -->
+        <div class="thumbnail-list">
+          <div class="thumbnail-list-wrapper">
+            <div class="swiper slider-thumbnail">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="thumbnail-item">
+                    <div class="thumbnail-image">
+                      <img
+                        src="./assets/images/del/gallery-thumbnail-6.webp"
+                        alt="Hội họp"
+                      />
+                    </div>
+                    <div class="thumbnail-name">hội họp</div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="thumbnail-item">
+                    <div class="thumbnail-image">
+                      <img
+                        src="./assets/images/del/gallery-thumbnail-5.webp"
+                        alt="Nhà hàng kawa"
+                      />
+                    </div>
+                    <div class="thumbnail-name">nhà hàng kawa</div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="thumbnail-item">
+                    <div class="thumbnail-image">
+                      <img
+                        src="./assets/images/del/gallery-thumbnail-4.webp"
+                        alt="Sự kiện"
+                      />
+                    </div>
+                    <div class="thumbnail-name">sự kiện</div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="thumbnail-item">
+                    <div class="thumbnail-image">
+                      <img
+                        src="./assets/images/del/gallery-thumbnail-3.webp"
+                        alt="Buffet sáng"
+                      />
+                    </div>
+                    <div class="thumbnail-name">buffet sáng</div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="thumbnail-item">
+                    <div class="thumbnail-image">
+                      <img
+                        src="./assets/images/del/gallery-thumbnail-2.webp"
+                        alt="Phòng nghỉ"
+                      />
+                    </div>
+                    <div class="thumbnail-name">phòng nghỉ</div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="thumbnail-item">
+                    <div class="thumbnail-image">
+                      <img
+                        src="./assets/images/del/gallery-thumbnail-1.webp"
+                        alt="Sân vườn"
+                      />
+                    </div>
+                    <div class="thumbnail-name">sân vườn</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-arrows">
+              <div class="swiper-button-next swiper-arrow">
+                <svg
+                  width="14"
+                  height="11"
+                  viewBox="0 0 14 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
+                    stroke="white"
+                    stroke-linejoin="bevel"
+                  />
+                </svg>
+              </div>
+              <div class="swiper-button-prev swiper-arrow">
+                <svg
+                  width="14"
+                  height="11"
+                  viewBox="0 0 14 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0.158203 5.5C3.1582 4.5 6.1582 1 6.1582 0M0.158203 5.5C3.1582 6.5 6.1582 10 6.1582 11M0.158203 5.5H13.1582"
+                    stroke="white"
+                    stroke-linejoin="bevel"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Khu vực hiển thị nội dung động (tên + mô tả + link) -->
+        <div class="content-thumbnail-group"></div>
+      </section>
+      <section
+        class="section-gallery"
+        section-fade-each-item
+        enabled-fade-each-mobile
+      >
+        <div class="section-wrapper">
+          <div
+            class="section-top d-flex align-items-center justify-content-between"
+          >
+            <h2 class="title heading-1 effect-line">THƯ VIỆN</h2>
+            <div class="btn-wrapper data-fade-in">
+              <div
+                class="btn-arrow text-uppercase color-black"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#modal-gallery"
+              >
+                <span>xem tất cả</span>
+                <div class="icon">
+                  <svg
+                    width="14"
+                    height="11"
+                    viewBox="0 0 14 11"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
+                      stroke="#181819"
+                      stroke-linejoin="bevel"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-grid">
+            <a
+              href="./assets/images/del/gallery-thumbnail-1.webp"
+              data-title="My title"
+              data-desc-position="center"
+              class="gallery-grid__item glightbox"
+              data-type="image"
+              data-effect="fade"
+              data-sizes="(max-width: 767px) 480px, 850px"
+              data-fade-item
+            >
+              <img src="./assets/images/del/gallery-thumbnail-1.webp" alt="" />
+            </a>
+            <a
+              href="./assets/images/del/gallery-thumbnail-2.webp"
+              data-title="My title 2"
+              data-desc-position="center"
+              class="gallery-grid__item glightbox"
+              data-type="image"
+              data-effect="fade"
+              data-sizes="(max-width: 767px) 480px, 850px"
+              data-fade-item
+            >
+              <img src="./assets/images/del/gallery-thumbnail-2.webp" alt="" />
+            </a>
+            <a
+              href="./assets/images/del/gallery-thumbnail-3.webp"
+              data-title="My title 3"
+              data-desc-position="center"
+              class="gallery-grid__item glightbox"
+              data-type="image"
+              data-effect="fade"
+              data-sizes="(max-width: 767px) 480px, 850px"
+              data-fade-item
+            >
+              <img src="./assets/images/del/gallery-thumbnail-3.webp" alt="" />
+            </a>
+            <a
+              href="./assets/images/del/gallery-thumbnail-4.webp"
+              data-title="My title 4"
+              data-desc-position="center"
+              class="gallery-grid__item glightbox"
+              data-type="image"
+              data-effect="fade"
+              data-sizes="(max-width: 767px) 480px, 850px"
+              data-fade-item
+            >
+              <img src="./assets/images/del/gallery-thumbnail-4.webp" alt="" />
+            </a>
+            <a
+              href="./assets/images/del/gallery-thumbnail-5.webp"
+              data-title="My title 5"
+              data-desc-position="center"
+              class="gallery-grid__item glightbox"
+              data-type="image"
+              data-effect="fade"
+              data-sizes="(max-width: 767px) 480px, 850px"
+              data-fade-item
+            >
+              <img src="./assets/images/del/gallery-thumbnail-5.webp" alt="" />
+            </a>
+            <a
+              href="./assets/images/del/gallery-thumbnail-6.webp"
+              data-title="My title 6"
+              data-desc-position="center"
+              class="gallery-grid__item glightbox"
+              data-type="image"
+              data-effect="fade"
+              data-sizes="(max-width: 767px) 480px, 850px"
+              data-fade-item
+            >
+              <img src="./assets/images/del/gallery-thumbnail-6.webp" alt="" />
+            </a>
+          </div>
+          <!-- <div class="btn-wrapper btn-wrapper-mobile data-fade-in d-none">
+            <div
+              class="btn-arrow text-uppercase color-black"
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#modal-gallery"
+            >
+              <span>xem tất cả</span>
+              <div class="icon">
+                <svg
+                  width="14"
+                  height="11"
+                  viewBox="0 0 14 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
+                    stroke="#181819"
+                    stroke-linejoin="bevel"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </section>
+
+      <!-- modal gallery -->
+      <div
+        class="modal fade"
+        id="modal-gallery"
+        tabindex="-1"
+        aria-hidden="true"
+        data-lenis-prevent
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <button
+              type="button"
+              class="button-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 40 40"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11 20.5C15.1538 19.1364 19.3077 14.3636 19.3077 13M11 20.5C15.1538 21.8636 19.3077 26.6364 19.3077 28M11 20.5H29"
+                  stroke="currentColor"
+                  stroke-linejoin="bevel"
+                />
+              </svg>
+            </button>
+            <div class="modal-body">
+              <ul class="nav nav-tabs d-none d-md-flex" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link active btn-body-font color-black"
+                    id="gallery-tab-1"
+                    data-bs-toggle="tab"
+                    data-bs-target="#gallery-1"
+                    type="button"
+                    role="tab"
+                    aria-controls="gallery-1"
+                    aria-selected="true"
+                  >
+                    Tất cả
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link btn-body-font color-black"
+                    id="gallery-tab-2"
+                    data-bs-toggle="tab"
+                    data-bs-target="#gallery-2"
+                    type="button"
+                    role="tab"
+                    aria-controls="gallery-2"
+                    aria-selected="false"
+                  >
+                    Tổng quan
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link btn-body-font color-black"
+                    id="gallery-tab-3"
+                    data-bs-toggle="tab"
+                    data-bs-target="#gallery-3"
+                    type="button"
+                    role="tab"
+                    aria-controls="gallery-3"
+                    aria-selected="false"
+                  >
+                    Phòng nghỉ
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link btn-body-font color-black"
+                    id="gallery-tab-4"
+                    data-bs-toggle="tab"
+                    data-bs-target="#gallery-4"
+                    type="button"
+                    role="tab"
+                    aria-controls="gallery-4"
+                    aria-selected="false"
+                  >
+                    Sân vườn
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link btn-body-font color-black"
+                    id="gallery-tab-5"
+                    data-bs-toggle="tab"
+                    data-bs-target="#gallery-5"
+                    type="button"
+                    role="tab"
+                    aria-controls="gallery-5"
+                    aria-selected="false"
+                  >
+                    Nhà hàng
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link btn-body-font color-black"
+                    id="gallery-tab-6"
+                    data-bs-toggle="tab"
+                    data-bs-target="#gallery-6"
+                    type="button"
+                    role="tab"
+                    aria-controls="gallery-6"
+                    aria-selected="false"
+                  >
+                    Hồ bơi
+                  </button>
+                </li>
+              </ul>
+              <div class="dropdown-custom filter-dropdown d-flex d-md-none">
+                <div class="dropdown-custom-btn">
+                  <div class="value-select">
+                    <span data-tab="gallery-1">Tất cả</span>
+                  </div>
+                  <div class="icon">
+                    <svg
+                      width="8"
+                      height="5"
+                      viewBox="0 0 8 5"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M7.34082 0.5C6.67415 0.5 4.34082 2.5 3.67415 4.5C3.00749 2.5 0.674153 0.5 0.0074861 0.5"
+                        stroke="white"
+                        stroke-linejoin="bevel"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="dropdown-custom-menu">
+                  <div class="dropdown-custom-item">
+                    <span data-tab="gallery-2">Tổng quan</span>
+                  </div>
+                  <div class="dropdown-custom-item">
+                    <span data-tab="gallery-3">Phòng nghỉ</span>
+                  </div>
+                  <div class="dropdown-custom-item">
+                    <span data-tab="gallery-4">Sân vườn</span>
+                  </div>
+                  <div class="dropdown-custom-item">
+                    <span data-tab="gallery-5">Nhà hàng</span>
+                  </div>
+                  <div class="dropdown-custom-item">
+                    <span data-tab="gallery-6">Hồ bơi</span>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-content">
+                <div
+                  class="tab-pane fade show active"
+                  id="gallery-1"
+                  role="tabpanel"
+                >
+                  <div class="gallery-grid">
+                    <a
+                      href="./assets/images/del/gallery-thumbnail-1.webp"
+                      data-title="My title"
+                      data-desc-position="center"
+                      class="gallery-grid__item glightbox"
+                      data-type="image"
+                      data-effect="fade"
+                      data-sizes="(max-width: 767px) 480px, 850px"
+                    >
+                      <img
+                        src="./assets/images/del/gallery-thumbnail-1.webp"
+                        alt=""
+                      />
+                    </a>
+
+                    <a
+                      href="./assets/images/del/gallery-thumbnail-3.webp"
+                      data-title="My title 3"
+                      data-desc-position="center"
+                      class="gallery-grid__item glightbox"
+                      data-type="image"
+                      data-effect="fade"
+                      data-sizes="(max-width: 767px) 480px, 850px"
+                    >
+                      <img
+                        src="./assets/images/del/gallery-thumbnail-3.webp"
+                        alt=""
+                      />
+                    </a>
+                    <a
+                      href="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                      data-title="My title 2"
+                      data-desc-position="center"
+                      class="gallery-grid__item glightbox item-video"
+                      data-type="video"
+                      data-source="mp4"
+                      data-effect="fade"
+                      data-sizes="(max-width: 767px) 480px, 850px"
+                    >
+                      <div class="icon-play">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="6"
+                          height="8.5"
+                          fill="none"
+                          overflow="visible"
+                        >
+                          <path
+                            d="M 0 0 L 0 8.5 L 6 4.5 Z"
+                            fill="currentColor"
+                          ></path>
+                        </svg>
+                      </div>
+                      <img
+                        src="./assets/images/del/gallery-thumbnail-2.webp"
+                        alt=""
+                      />
+                    </a>
+                    <a
+                      href="./assets/images/del/gallery-thumbnail-4.webp"
+                      data-title="My title 4"
+                      data-desc-position="center"
+                      class="gallery-grid__item glightbox"
+                      data-type="image"
+                      data-effect="fade"
+                      data-sizes="(max-width: 767px) 480px, 850px"
+                    >
+                      <img
+                        src="./assets/images/del/gallery-thumbnail-4.webp"
+                        alt=""
+                      />
+                    </a>
+                    <a
+                      href="./assets/images/del/gallery-thumbnail-5.webp"
+                      data-title="My title 5"
+                      data-desc-position="center"
+                      class="gallery-grid__item glightbox"
+                      data-type="image"
+                      data-effect="fade"
+                      data-sizes="(max-width: 767px) 480px, 850px"
+                    >
+                      <img
+                        src="./assets/images/del/gallery-thumbnail-5.webp"
+                        alt=""
+                      />
+                    </a>
+                    <a
+                      href="./assets/images/del/gallery-thumbnail-6.webp"
+                      data-title="My title 6"
+                      data-desc-position="center"
+                      class="gallery-grid__item glightbox"
+                      data-type="image"
+                      data-effect="fade"
+                      data-sizes="(max-width: 767px) 480px, 850px"
+                    >
+                      <img
+                        src="./assets/images/del/gallery-thumbnail-6.webp"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="gallery-2" role="tabpanel">
+                  <div class="gallery-grid">
+                    <a
+                      href="./assets/images/del/gallery-thumbnail-1.webp"
+                      data-title="My title"
+                      data-desc-position="center"
+                      class="gallery-grid__item glightbox"
+                      data-type="image"
+                      data-effect="fade"
+                      data-sizes="(max-width: 767px) 480px, 850px"
+                    >
+                      <img
+                        src="./assets/images/del/gallery-thumbnail-1.webp"
+                        alt=""
+                      />
+                    </a>
+                    <a
+                      href="./assets/images/del/gallery-thumbnail-2.webp"
+                      data-title="My title 2"
+                      data-desc-position="center"
+                      class="gallery-grid__item glightbox"
+                      data-type="image"
+                      data-effect="fade"
+                      data-sizes="(max-width: 767px) 480px, 850px"
+                    >
+                      <img
+                        src="./assets/images/del/gallery-thumbnail-2.webp"
+                        alt=""
+                      />
+                    </a>
+                    <a
+                      href="./assets/images/del/gallery-thumbnail-3.webp"
+                      data-title="My title 3"
+                      data-desc-position="center"
+                      class="gallery-grid__item glightbox"
+                      data-type="image"
+                      data-effect="fade"
+                      data-sizes="(max-width: 767px) 480px, 850px"
+                    >
+                      <img
+                        src="./assets/images/del/gallery-thumbnail-3.webp"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="gallery-3" role="tabpanel">
+                  <div class="gallery-grid">
+                    <a
+                      href="./assets/images/del/gallery-thumbnail-4.webp"
+                      data-title="My title 4"
+                      data-desc-position="center"
+                      class="gallery-grid__item glightbox"
+                      data-type="image"
+                      data-effect="fade"
+                      data-sizes="(max-width: 767px) 480px, 850px"
+                    >
+                      <img
+                        src="./assets/images/del/gallery-thumbnail-4.webp"
+                        alt=""
+                      />
+                    </a>
+                    <a
+                      href="./assets/images/del/gallery-thumbnail-5.webp"
+                      data-title="My title 5"
+                      data-desc-position="center"
+                      class="gallery-grid__item glightbox"
+                      data-type="image"
+                      data-effect="fade"
+                      data-sizes="(max-width: 767px) 480px, 850px"
+                    >
+                      <img
+                        src="./assets/images/del/gallery-thumbnail-5.webp"
+                        alt=""
+                      />
+                    </a>
+                    <a
+                      href="./assets/images/del/gallery-thumbnail-6.webp"
+                      data-title="My title 6"
+                      data-desc-position="center"
+                      class="gallery-grid__item glightbox"
+                      data-type="image"
+                      data-effect="fade"
+                      data-sizes="(max-width: 767px) 480px, 850px"
+                    >
+                      <img
+                        src="./assets/images/del/gallery-thumbnail-6.webp"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end modal -->
+
+      <section class="destination-location" section-fade-each-item>
+        <h2 class="destination-title effect-line heading-1">vị trí điểm đến</h2>
+        <div class="destination-wrapper">
+          <div class="location-iframe data-fade-in-mobile">
+            <div class="iframe">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.207636577994!2d105.82361967480767!3d21.024376380623863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab590031388f%3A0x134882cb9685de56!2sNesta-The%20Grand%20Hao%20Nam%20(Nesta%20Hotel%20%26%20Spa)!5e0!3m2!1sen!2s!4v1768971904167!5m2!1sen!2s"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+          <div class="location-review data-fade-in-mobile">
+            <div class="location-list">
+              <a href="" class="location-item" data-fade-item>
+                <div class="location-image">
+                  <img src="./assets/images/del/location-img-4.png" alt="" />
+                </div>
+                <div class="location-info">
+                  <div class="name">Lăng Chủ Tịch</div>
+                  <div class="time">25 phút đi xe</div>
+                </div>
+              </a>
+              <a href="" class="location-item" data-fade-item>
+                <div class="location-image">
+                  <img src="./assets/images/del/location-img-1.png" alt="" />
+                </div>
+                <div class="location-info">
+                  <div class="name">Ga Hà Nội</div>
+                  <div class="time">25 phút đi xe</div>
+                </div>
+              </a>
+              <a href="" class="location-item" data-fade-item>
+                <div class="location-image">
+                  <img src="./assets/images/del/location-img-2.png" alt="" />
+                </div>
+                <div class="location-info">
+                  <div class="name">Văn Miếu Quốc Tử Giám</div>
+                  <div class="time">25 phút đi xe</div>
+                </div>
+              </a>
+              <a href="" class="location-item" data-fade-item>
+                <div class="location-image">
+                  <img src="./assets/images/del/location-img-3.png" alt="" />
+                </div>
+                <div class="location-info">
+                  <div class="name">Nhà Hát Lớn Hà Nội</div>
+                  <div class="time">25 phút đi xe</div>
+                </div>
+              </a>
+            </div>
+            <button
+              class="btn-arrow text-uppercase color-black"
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#locationModal"
+              data-fade-item
+            >
+              <span>xem thêm</span>
+              <div class="icon">
+                <svg
+                  width="14"
+                  height="11"
+                  viewBox="0 0 14 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
+                    stroke="#181819"
+                    stroke-linejoin="bevel"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- modal location -->
+      <div
+        class="modal fade"
+        data-lenis-prevent
+        id="locationModal"
+        tabindex="-1"
+        aria-labelledby="locationModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="locationModalLabel">
+                Khám phá khu vực
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 13 13"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.3535 0.353516L0.353516 12.3535"
+                    stroke="#181819"
+                  />
+                  <path
+                    d="M0.353516 0.353516L12.3535 12.3535"
+                    stroke="#181819"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="location-popup-list">
+                <a href="" class="location-popup-item">
+                  <div class="location-image">
+                    <img src="./assets/images/del/location-img-4.png" alt="" />
+                  </div>
+                  <div class="location-info">
+                    <div class="name">Lăng Chủ Tịch</div>
+                    <div class="time">25 phút đi xe</div>
+                  </div>
+                </a>
+                <a href="" class="location-popup-item">
+                  <div class="location-image">
+                    <img src="./assets/images/del/location-img-4.png" alt="" />
+                  </div>
+                  <div class="location-info">
+                    <div class="name">Nhà Hát Lớn Hà Nội</div>
+                    <div class="time">25 phút đi xe</div>
+                  </div>
+                </a>
+                <a href="" class="location-popup-item">
+                  <div class="location-image">
+                    <img src="./assets/images/del/location-img-3.png" alt="" />
+                  </div>
+                  <div class="location-info">
+                    <div class="name">Lăng Chủ Tịch</div>
+                    <div class="time">25 phút đi xe</div>
+                  </div>
+                </a>
+                <a href="" class="location-popup-item">
+                  <div class="location-image">
+                    <img src="./assets/images/del/location-img-4.png" alt="" />
+                  </div>
+                  <div class="location-info">
+                    <div class="name">Nhà Hát Lớn Hà Nội</div>
+                    <div class="time">25 phút đi xe</div>
+                  </div>
+                </a>
+                <a href="" class="location-popup-item">
+                  <div class="location-image">
+                    <img src="./assets/images/del/location-img-4.png" alt="" />
+                  </div>
+                  <div class="location-info">
+                    <div class="name">Lăng Chủ Tịch</div>
+                    <div class="time">25 phút đi xe</div>
+                  </div>
+                </a>
+                <a href="" class="location-popup-item">
+                  <div class="location-image">
+                    <img src="./assets/images/del/location-img-4.png" alt="" />
+                  </div>
+                  <div class="location-info">
+                    <div class="name">Nhà Hát Lớn Hà Nội</div>
+                    <div class="time">25 phút đi xe</div>
+                  </div>
+                </a>
+              </div>
+              <div class="sth-here">
+                <div class="title">Có gì quanh đây?</div>
+                <div class="description">
+                  Tọa lạc tại vị trí đắc địa trên tuyến phố Hào Nam sầm uất,
+                  Nesta – The Grand Haonam là tổ hợp hiện đại bao gồm trung tâm
+                  thương mại, văn phòng, căn hộ cao cấp và nhà ở thấp tầng.
+                  Không chỉ mang đến không gian sống tiện nghi, dự án còn kết
+                  nối dễ dàng đến các khu vực thương mại, văn hóa địa phương.
+                </div>
+              </div>
+              <div class="location-filter">
+                <div class="filter-section-multi">
+                  <div class="filter-list-button d-none d-lg-flex">
+                    <div class="filter-button active" data-type="all">
+                      Tất cả địa điểm
+                    </div>
+                    <div class="filter-button" data-type="type-1">Lân cận</div>
+                    <div class="filter-button" data-type="type-2">
+                      Dạo quanh
+                    </div>
+                    <div class="filter-button" data-type="type-3">Nhà hàng</div>
+                    <div class="filter-button" data-type="type-4">Mua sắm</div>
+                    <div class="filter-button" data-type="type-5">Khám phá</div>
+                  </div>
+                </div>
+                <div class="filter-section-result">
+                  <div class="filter-item type-1">
+                    <div class="location-result">
+                      <div class="name">Đại sứ quán Mỹ</div>
+                      <span>-</span>
+                      <div class="time">12 phút đi bộ</div>
+                    </div>
+                  </div>
+                  <div class="filter-item type-1">
+                    <div class="location-result">
+                      <div class="name">Văn Miếu</div>
+                      <span>-</span>
+                      <div class="time">15 phút đi bộ</div>
+                    </div>
+                  </div>
+                  <div class="filter-item type-2">
+                    <div class="location-result">
+                      <div class="name">Lăng Bác</div>
+                      <span>-</span>
+                      <div class="time">3 phút đi xe</div>
+                    </div>
+                  </div>
+                  <div class="filter-item type-3">
+                    <div class="location-result">
+                      <div class="name">Quán Quê</div>
+                      <span>-</span>
+                      <div class="time">2 phút đi bộ</div>
+                    </div>
+                  </div>
+                  <div class="filter-item type-3">
+                    <div class="location-result">
+                      <div class="name">King Long Restaurant</div>
+                      <span>-</span>
+                      <div class="time">2 phút đi bộ</div>
+                    </div>
+                  </div>
+                  <div class="filter-item type-3">
+                    <div class="location-result">
+                      <div class="name">Bún Chả Kim Oanh</div>
+                      <span>-</span>
+                      <div class="time">2 phút đi bộ</div>
+                    </div>
+                  </div>
+                  <div class="filter-item type-2">
+                    <div class="location-result">
+                      <div class="name">Phở bò Nam Định</div>
+                      <span>-</span>
+                      <div class="time">2 phút đi bộ</div>
+                    </div>
+                  </div>
+                  <div class="filter-item type-4">
+                    <div class="location-result">
+                      <div class="name">Ga Hà Nội</div>
+                      <span>-</span>
+                      <div class="time">2 phút đi bộ</div>
+                    </div>
+                  </div>
+                  <div class="filter-item type-4">
+                    <div class="location-result">
+                      <div class="name">Ga Long Biên, Hà Nội</div>
+                      <span>-</span>
+                      <div class="time">2 phút đi bộ</div>
+                    </div>
+                  </div>
+                  <div class="filter-item type-5">
+                    <div class="location-result">
+                      <div class="name">Sân bay Quốc tế Nội Bài</div>
+                      <span>-</span>
+                      <div class="time">2 phút đi bộ</div>
+                    </div>
+                  </div>
+                  <div class="filter-item type-5">
+                    <div class="location-result">
+                      <div class="name">Sân bay Quốc tế Nội Bài</div>
+                      <span>-</span>
+                      <div class="time">2 phút đi bộ</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- layout -->
+    <!-- cta -->
+
+    <!-- end cta -->
+    <!-- footer -->
+    <script>
+      fetch("./components/footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer").innerHTML = data;
+        });
+    </script>
+    <footer id="footer" class="footer"></footer>
+    <!-- end footer -->
+    <!-- end layout -->
+
+    <script src="./assets/libs/jquery-3.7.1.js"></script>
+    <script src="./assets/libs/lenis.min.js"></script>
+    <script src="./assets/libs/gsap.min.js"></script>
+    <script src="./assets/libs/ScrollTrigger.min.js"></script>
+    <script src="./assets/libs/SplitText.min.js"></script>
+    <script src="./assets/libs/bootstrap.bundle.min.js"></script>
+    <script src="./assets/libs/moment.min.js"></script>
+    <script src="./assets/libs/imagesloaded.pkgd.min.js"></script>
+    <script src="./assets/libs/lightpick.min.js"></script>
+    <script src="./assets/libs/swiper-bundle.min.js"></script>
+    <script src="./assets/libs/glightbox.min.js"></script>
+    <!-- import custom js -->
+    <script type="module" src="./assets/main/js/script.min.js"></script>
+
+    <!-- end import custom js -->
+  </body>
+</html>

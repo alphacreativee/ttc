@@ -1,0 +1,138 @@
+.news-detail {
+  background-color: var(--color-white);
+
+  .section-wrapper {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 80px 0;
+
+    @media (max-width: 991px) {
+      padding: 48px 24px;
+      max-width: 100%;
+    }
+
+    .tag {
+      padding: 8px 16px;
+      border-radius: 20px;
+      background-color: var(--color-secondary-2);
+      width: max-content;
+      margin-bottom: 24px;
+    }
+
+    .title {
+      margin-bottom: 24px;
+    }
+
+    .wp-block-image {
+      margin: 40px 0;
+
+      @media (max-width: 991px) {
+        margin: 32px 0;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+        overflow: hidden;
+      }
+
+      figcaption {
+        font-size: 13px;
+        line-height: 20px;
+        font-weight: 500;
+        color: var(--color-black);
+        text-align: center;
+        margin-top: 8px;
+      }
+    }
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-size: 20px;
+      line-height: 28px;
+      margin-bottom: 24px;
+      font-weight: 600;
+    }
+
+    p,
+    a,
+    ul,
+    ol {
+      font-size: 15px;
+      line-height: 25px;
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+
+    a {
+      margin-bottom: 0;
+      transition: all 0.4s ease;
+      color: var(--color-primary-3);
+
+      &:hover {
+        color: var(--color-primary-2);
+      }
+    }
+
+    ul,
+    ol {
+      padding-left: 16px;
+    }
+
+    ul {
+      list-style: disc;
+    }
+
+    ol {
+      list-style: decimal;
+    }
+  }
+
+  &__cta {
+    margin-top: 40px;
+
+    @media (max-width: 991px) {
+      margin-top: 32px;
+    }
+
+    .share {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    ul {
+      list-style: none !important;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding-left: 0 !important;
+      margin-bottom: 0 !important;
+
+      li {
+        a {
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          background: rgba(20, 20, 20, 0.05);
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.4s ease;
+          color: var(--color-black) !important;
+
+          &:hover {
+            color: var(--color-white) !important;
+            background: var(--color-primary-3) !important;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,256 @@
+#cta {
+  position: fixed;
+  right: 12px;
+  bottom: 35px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition:
+    right 0.5s ease,
+    opacity 0.3s ease 0.15s;
+  opacity: 1;
+
+  @media (max-width: 991px) {
+    right: 24px;
+    transition: opacity 0.3s ease 0.15s;
+  }
+
+  // Khi có class run-right
+  &.run-right {
+    right: -30px;
+    opacity: 0;
+
+    @media (max-width: 991px) {
+      right: 24px;
+
+      .cta-booking {
+        transform: translateX(30px);
+        opacity: 0;
+        transition:
+          transform 0.5s ease,
+          opacity 0.4s ease 0.1s;
+        transition-delay: 0s;
+      }
+
+      .cta-wrapper {
+        transform: translateX(30px);
+        opacity: 0;
+        transition:
+          transform 0.5s ease,
+          opacity 0.4s ease 0.1s;
+        transition-delay: 0.1s;
+      }
+    }
+  }
+
+  .cta {
+    &-wrapper {
+      position: relative;
+      opacity: 1;
+
+      @media (max-width: 991px) {
+        transform: translateX(0);
+        transition:
+          transform 0.5s ease,
+          opacity 0.3s ease;
+        transition-delay: 0.15s;
+      }
+
+      // Desktop: hover
+      @media (min-width: 992px) {
+        &:hover {
+          .cta-global {
+            background-color: var(--color-primary-3);
+
+            &::before {
+              opacity: 1;
+              visibility: visible;
+            }
+
+            img {
+              &:first-child {
+                transform: scale(0);
+              }
+
+              &:last-child {
+                transform: translate(-50%, -50%) scale(1);
+              }
+            }
+          }
+
+          .cta-list {
+            opacity: 1;
+            visibility: visible;
+            transition-delay: 0s;
+
+            .cta-item {
+              transform: translateY(0) scale(1);
+              opacity: 1;
+            }
+          }
+        }
+      }
+
+      // Mobile: is-active
+      @media (max-width: 991px) {
+        &.is-active {
+          .cta-global {
+            background-color: var(--color-primary-3);
+
+            &::before {
+              opacity: 1;
+              visibility: visible;
+            }
+
+            img {
+              &:first-child {
+                transform: scale(0);
+              }
+
+              &:last-child {
+                transform: translate(-50%, -50%) scale(1);
+              }
+            }
+          }
+
+          .cta-list {
+            opacity: 1;
+            visibility: visible;
+            transition-delay: 0s;
+
+            .cta-item {
+              transform: translateY(0) scale(1);
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+
+    &-list {
+      position: absolute;
+      top: 0;
+      transform: translateY(-100%);
+      margin-top: -12px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      opacity: 0;
+      visibility: hidden;
+      transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+      transition-delay: 0.3s;
+    }
+
+    &-item {
+      width: 54px;
+      height: 54px;
+      display: flex;
+      transform: translateY(20px) scale(0);
+      transform-origin: center;
+      opacity: 0;
+      transition:
+        transform 0.4s ease,
+        opacity 0.3s ease,
+        background-color 0.3s ease;
+
+      &:nth-child(3) {
+        transition-delay: 0.05s;
+      }
+
+      &:nth-child(2) {
+        transition-delay: 0.1s;
+      }
+
+      &:nth-child(1) {
+        transition-delay: 0.15s;
+      }
+
+      a {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: var(--color-primary-2);
+        transition: all 0.3s ease;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          width: 18px;
+          height: 18px;
+        }
+
+        &:hover {
+          background-color: var(--color-black);
+        }
+      }
+    }
+
+    &-global {
+      width: 54px;
+      height: 54px;
+      background-color: var(--color-black);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      transition: all 0.3s ease;
+      cursor: pointer;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: transparent;
+        width: 54px;
+        height: 54px;
+        transform: translateY(-50%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      img {
+        transition: all 0.3s ease;
+
+        &:last-child {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) scale(0);
+          transition: all 0.3s ease;
+        }
+      }
+    }
+  }
+
+  .cta-booking {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background-color: var(--color-primary-3);
+    display: none;
+    opacity: 1;
+
+    @media (max-width: 991px) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 54px;
+      transform: translateX(0);
+      transition:
+        transform 0.5s ease,
+        opacity 0.3s ease;
+      transition-delay: 0s;
+    }
+
+    &:hover {
+      background-color: var(--color-black);
+    }
+  }
+}

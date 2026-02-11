@@ -1,0 +1,60 @@
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100svh;
+  background-color: var(--color-secondary-1);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  .loading-video {
+    position: relative;
+    --mask-scale: 1;
+    --mask-opacity: 1;
+    .loading-logo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    // &::before {
+    //   content: "";
+    //   position: absolute;
+    //   inset: 0;
+    //   z-index: 3;
+    //   background-color: var(--color-secondary-1);
+    //   mask-mode: alpha;
+    //   mask-image: url("../../images/icons/intro-bg.png");
+    //   mask-repeat: no-repeat;
+    //   mask-position: center;
+    //   mask-size: cover;
+    //   transform: scale(var(--mask-scale));
+    //   opacity: var(--mask-opacity);
+    //   transition:
+    //     transform 0s,
+    //     opacity 0s;
+    // }
+    width: 100%;
+    height: 100svh;
+    video {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+      z-index: 2;
+    }
+  }
+}
