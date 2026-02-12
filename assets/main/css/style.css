@@ -1,5 +1,5 @@
 :root {
-  --font-heading: "Trajan Pro 3", sans-serif;
+  --font-heading: "SVN-Gilroy", sans-serif;
   --font-body: "Montserrat", sans-serif;
   --color-black: #181819;
   --color-white: #ffffff;
@@ -252,7 +252,7 @@ body {
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: auto !important;
   -moz-osx-font-smoothing: grayscale !important;
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   background-color: var(--color-bg);
   overflow-x: hidden;
 }
@@ -321,9 +321,9 @@ main {
   line-height: 25px;
   color: var(--color-white);
   font-family: var(--font-heading);
-  font-weight: bold;
+  font-weight: 600;
   padding: 11.5px 24px;
-  background-color: var(--color-primary-3);
+  background-color: var(--color-primary-1);
   position: relative;
   overflow: hidden;
 }
@@ -340,7 +340,7 @@ main {
 .button-global::before {
   content: "";
   position: absolute;
-  background-color: var(--color-black);
+  background-color: var(--color-primary-2);
   width: 100%;
   height: 0;
   z-index: 2;
@@ -1486,7 +1486,6 @@ section.lightpick .lightpick__previous-action {
   font-size: 15px;
   line-height: 20px;
   font-family: var(--font-heading);
-  text-transform: uppercase;
   white-space: nowrap;
 }
 #header .header-menu ul li a {
@@ -1494,7 +1493,7 @@ section.lightpick .lightpick__previous-action {
   font-family: var(--font-heading);
   font-size: 15px;
   line-height: 20px;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--color-white);
   transition: color 0.3s ease;
 }
