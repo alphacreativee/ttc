@@ -30,7 +30,7 @@ body {
   font-family: var(--font-heading);
   font-size: 28px;
   line-height: 32px;
-  font-weight: 400;
+  font-weight: bold;
 }
 @media (max-width: 991px) {
   .heading-1 {
