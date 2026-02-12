@@ -45,11 +45,7 @@ import {
 ("use strict");
 $ = jQuery;
 
-const lenis = new Lenis({
-  smoothTouch: false,
-  lerp: 0.08,
-  syncToNative: true,
-});
+const lenis = new Lenis();
 window.lenis = lenis;
 lenis.on("scroll", ScrollTrigger.update);
 gsap.ticker.add((time) => {

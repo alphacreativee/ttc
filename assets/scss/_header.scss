@@ -72,7 +72,7 @@
           align-items: center;
           &:hover {
             span {
-              color: var(--color-primary-3);
+              color: var(--color-primary-2);
             }
           }
           span {
@@ -117,11 +117,11 @@
                 clip-path: inset(0 0 0 0) !important;
               }
               & > a {
-                color: var(--color-primary-3);
+                color: var(--color-primary-2);
                 .icon {
                   svg {
                     path {
-                      stroke: var(--color-primary-3) !important ;
+                      stroke: var(--color-primary-2) !important ;
                       @media (max-width: 991px) {
                         stroke: var(--color-black) !important ;
                       }
@@ -182,7 +182,7 @@
                       &.location-hotel {
                         pointer-events: none;
                         &:hover {
-                          color: var(--color-black) !important ;
+                          color: var(--color-primary-2) !important ;
                         }
                       }
                       span {
@@ -222,7 +222,7 @@
                 .icon {
                   svg {
                     path {
-                      stroke: var(--color-primary-3) !important ;
+                      stroke: var(--color-primary-2) !important ;
                     }
                   }
                 }
@@ -278,10 +278,10 @@
               font-size: 15px;
             }
             &.active {
-              color: var(--color-primary-3) !important;
+              color: var(--color-primary-2) !important;
             }
             &:hover {
-              color: var(--color-primary-3) !important;
+              color: var(--color-primary-2) !important;
             }
           }
         }
@@ -598,11 +598,11 @@
             &.menu-item-has-children {
               & > a {
                 &.active {
-                  color: var(--color-primary-3) !important ;
+                  color: var(--color-primary-2) !important ;
                   .icon {
                     svg {
                       path {
-                        stroke: var(--color-primary-3) !important ;
+                        stroke: var(--color-primary-2) !important ;
                       }
                     }
                   }
@@ -610,14 +610,14 @@
                 .icon {
                   svg {
                     path {
-                      stroke: var(--color-gray-2);
+                      stroke: var(--color-primary-3);
                     }
                   }
                 }
               }
             }
             a {
-              color: var(--color-gray-2);
+              color: var(--color-primary-3);
             }
           }
         }
@@ -636,13 +636,13 @@
         .icon {
           svg {
             path {
-              stroke: var(--color-gray-2);
+              stroke: var(--color-primary-3);
             }
           }
         }
         .value-select {
           span {
-            color: var(--color-gray-2);
+            color: var(--color-primary-3);
           }
         }
       }
