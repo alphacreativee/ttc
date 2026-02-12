@@ -936,7 +936,7 @@ section.lightpick .lightpick__previous-action {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  padding: 40px 80px 20px;
+  padding: 40px 80px 32px;
 }
 @media (max-width: 991px) {
   .footer-main {
@@ -957,7 +957,7 @@ section.lightpick .lightpick__previous-action {
 }
 .footer-right {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 40% 60%;
   gap: 55px 24px;
 }
 @media (max-width: 767px) {
@@ -973,12 +973,12 @@ section.lightpick .lightpick__previous-action {
 }
 .footer-brands ul {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 8px 120px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px 32px;
 }
 @media (max-width: 1400px) {
   .footer-brands ul {
-    gap: 8px 40px;
+    gap: 8px 32px;
   }
 }
 @media (max-width: 767px) {
@@ -1022,6 +1022,26 @@ section.lightpick .lightpick__previous-action {
 }
 .footer-menu .menu > ul .menu-item-has-children li:not(:first-child) {
   margin-top: 8px;
+}
+.footer-menu .menu > ul .menu-item-has-children ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px 120px;
+}
+@media (max-width: 1400px) {
+  .footer-menu .menu > ul .menu-item-has-children ul {
+    gap: 8px 80px;
+  }
+}
+@media (max-width: 767px) {
+  .footer-menu .menu > ul .menu-item-has-children ul {
+    gap: 8px 24px;
+  }
+}
+@media (max-width: 480px) {
+  .footer-menu .menu > ul .menu-item-has-children ul {
+    grid-template-columns: 1fr;
+  }
 }
 .footer-menu .menu a {
   transition: all 0.4s ease;
