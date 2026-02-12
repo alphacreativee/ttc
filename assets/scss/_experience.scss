@@ -1,5 +1,5 @@
 .section-experience {
-  background-color: var(--color-secondary-1);
+  background-color: #84267e26;
   &.member-sec {
     .col-content {
       padding: 40px 90px;
@@ -29,7 +29,7 @@
     .image {
       width: 100%;
       aspect-ratio: 625 / 600;
-      border-radius: 20px;
+      // border-radius: 20px;
       overflow: hidden;
 
       img {
@@ -50,7 +50,7 @@
     max-width: calc(calc(6 / 9) * 100%);
     background-color: #fff;
     transform: translateX(calc(-1 * calc(2 / 12) * 100% - 40px));
-    border-radius: 20px;
+    // border-radius: 20px;
     padding: 40px 72px;
     top: 32px;
     @media screen and (min-width: 1500px) {
@@ -86,7 +86,7 @@
     }
   }
   .col-image-one {
-    border-radius: 20px;
+    // border-radius: 20px;
     overflow: hidden;
     width: 100%;
     aspect-ratio: 382 / 485;

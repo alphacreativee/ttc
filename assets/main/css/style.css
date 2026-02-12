@@ -1,7 +1,7 @@
 :root {
   --font-heading: "SVN-Gilroy", sans-serif;
   --font-body: "Montserrat", sans-serif;
-  --color-black: #181819;
+  --color-black: #023668;
   --color-white: #ffffff;
   --color-primary-1: #c9a455;
   --color-primary-2: #84267e;
@@ -9,7 +9,7 @@
   --color-secondary-1: #f9f6ee;
   --color-secondary-2: #f0e8d7;
   --color-gray-1: #f1f0f2;
-  --color-gray-2: #000000;
+  --color-gray-2: #023668;
   --color-bg: #f4f4f4;
 }
 
@@ -998,7 +998,7 @@ section.lightpick .lightpick__previous-action {
   font-weight: 500;
 }
 .footer-brands a:hover {
-  color: var(--color-primary-3);
+  color: var(--color-primary-1);
 }
 .footer-menu .menu > ul {
   display: flex;
@@ -1047,7 +1047,7 @@ section.lightpick .lightpick__previous-action {
   transition: all 0.4s ease;
 }
 .footer-menu .menu a:hover {
-  color: var(--color-primary-3);
+  color: var(--color-primary-1);
 }
 .footer-logo {
   display: block;
@@ -1091,7 +1091,7 @@ section.lightpick .lightpick__previous-action {
   transition: all 0.4s ease;
 }
 .footer-address li a:hover {
-  color: var(--color-primary-3);
+  color: var(--color-primary-1);
 }
 .footer-address li .icon {
   width: 16px;
@@ -1159,11 +1159,11 @@ section.lightpick .lightpick__previous-action {
   transition: all 0.4s ease;
 }
 .footer .form button:hover {
-  color: var(--color-primary-3);
+  color: var(--color-primary-1);
 }
 .footer .form button:hover .icon {
   transform: translateX(5px);
-  color: var(--color-primary-3);
+  color: var(--color-primary-1);
 }
 .footer .form-message {
   color: red;
@@ -1184,7 +1184,7 @@ section.lightpick .lightpick__previous-action {
   transition: all 0.4s ease;
 }
 .footer-social ul a:hover {
-  color: var(--color-primary-3);
+  color: var(--color-primary-1);
 }
 .footer .btn-scroll-top {
   width: 40px;
@@ -1200,7 +1200,7 @@ section.lightpick .lightpick__previous-action {
 }
 .footer .btn-scroll-top:hover {
   color: var(--color-white);
-  background-color: var(--color-primary-3);
+  background-color: var(--color-primary-1);
 }
 .footer-bottom {
   margin-top: 48px;
@@ -1846,7 +1846,7 @@ section.lightpick .lightpick__previous-action {
 
 .news-wrapper {
   padding: 80px;
-  background-color: var(--color-secondary-1);
+  background-color: var(--color-white);
 }
 @media (max-width: 991px) {
   .news-wrapper {
@@ -1868,12 +1868,11 @@ section.lightpick .lightpick__previous-action {
   transform: scale(1.03);
 }
 .news-item:hover .content-title {
-  color: var(--color-primary-3);
+  color: var(--color-primary-2);
 }
 .news-item .image {
   width: 100%;
   aspect-ratio: 400/216;
-  border-radius: 12px;
   overflow: hidden;
 }
 .news-item .image img {
@@ -2122,7 +2121,7 @@ section.lightpick .lightpick__previous-action {
 }
 
 .section-experience {
-  background-color: var(--color-secondary-1);
+  background-color: rgba(132, 38, 126, 0.1490196078);
 }
 .section-experience.member-sec .col-content {
   padding: 40px 90px;
@@ -2153,7 +2152,6 @@ section.lightpick .lightpick__previous-action {
 .section-experience .col-image .image {
   width: 100%;
   aspect-ratio: 625/600;
-  border-radius: 20px;
   overflow: hidden;
 }
 .section-experience .col-image .image img {
@@ -2171,7 +2169,6 @@ section.lightpick .lightpick__previous-action {
   max-width: 66.6666666667%;
   background-color: #fff;
   transform: translateX(calc(-16.6666666667% - 40px));
-  border-radius: 20px;
   padding: 40px 72px;
   top: 32px;
 }
@@ -2210,7 +2207,6 @@ section.lightpick .lightpick__previous-action {
   }
 }
 .section-experience .col-image-one {
-  border-radius: 20px;
   overflow: hidden;
   width: 100%;
   aspect-ratio: 382/485;
@@ -2245,7 +2241,7 @@ section.lightpick .lightpick__previous-action {
 }
 
 .hotel-filter {
-  background-color: var(--color-secondary-1);
+  background-color: rgba(132, 38, 126, 0.1490196078);
 }
 .hotel-filter .section-wrapper {
   padding: 80px 80px 60px 80px;

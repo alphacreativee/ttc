@@ -9,7 +9,7 @@
 .news {
   &-wrapper {
     padding: 80px;
-    background-color: var(--color-secondary-1);
+    background-color: var(--color-white);
 
     @media (max-width: 991px) {
       padding: 48px 24px;
@@ -33,14 +33,14 @@
       }
 
       .content-title {
-        color: var(--color-primary-3);
+        color: var(--color-primary-2);
       }
     }
 
     .image {
       width: 100%;
       aspect-ratio: 400 / 216;
-      border-radius: 12px;
+      // border-radius: 12px;
       overflow: hidden;
 
       img {
