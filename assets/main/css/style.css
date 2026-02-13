@@ -973,11 +973,11 @@ section.lightpick .lightpick__previous-action {
 .footer-brands ul {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 8px 32px;
+  gap: 8px 16px;
 }
 @media (max-width: 1400px) {
   .footer-brands ul {
-    gap: 8px 32px;
+    gap: 8px 16px;
   }
 }
 @media (max-width: 767px) {
@@ -1137,7 +1137,6 @@ section.lightpick .lightpick__previous-action {
   font-weight: 600;
   font-family: var(--font-heading);
   color: var(--color-white);
-  text-transform: uppercase;
   gap: 20px;
   display: flex;
   align-items: center;
@@ -2168,7 +2167,7 @@ section.lightpick .lightpick__previous-action {
   max-width: 66.6666666667%;
   background-color: #fff;
   transform: translateX(calc(-16.6666666667% - 40px));
-  padding: 40px 72px;
+  padding: 60px 72px;
   top: 32px;
 }
 @media screen and (min-width: 1500px) {
@@ -2288,9 +2287,6 @@ section.lightpick .lightpick__previous-action {
 .hotel-filter__top .nav-tabs .nav-link:hover {
   color: var(--color-white);
   background-color: var(--color-primary-2);
-}
-.hotel-filter__slider .swiper {
-  margin: 0 -12px;
 }
 .hotel-filter__slider .swiper-wrapper {
   align-items: stretch;
