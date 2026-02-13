@@ -432,7 +432,6 @@ button.aloading::after {
     padding: 24px;
     transition: transform 0.5s ease;
     transform: translateY(100%);
-    border-radius: 12px 12px 0 0;
   }
   .booking-form-wrapper.active {
     transform: translateY(0);
@@ -460,7 +459,6 @@ button.aloading::after {
   top: 100%;
   transform: translateY(0);
   margin-top: 18px;
-  border-radius: 0 0 12px 12px;
 }
 @media (max-width: 991px) {
   .booking-form-wrapper.booking-up .dropdown-custom-menu {
@@ -473,7 +471,6 @@ button.aloading::after {
   top: 100%;
   transform: translateY(0);
   margin-top: 18px;
-  border-radius: 0 0 12px 12px;
 }
 @media (max-width: 991px) {
   .booking-form-wrapper.booking-up .select-people .select-box {
@@ -528,7 +525,6 @@ button.aloading::after {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  border-radius: 12px 12px 0 0;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
@@ -659,7 +655,6 @@ button.aloading::after {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  border-radius: 12px 12px 0 0;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
@@ -1352,6 +1347,7 @@ section.lightpick .lightpick__previous-action {
   cursor: pointer;
   gap: 8px;
   align-items: center;
+  pointer-events: none;
 }
 #header .header-lang .dropdown-custom-item:hover span {
   color: var(--color-primary-2);
@@ -2288,6 +2284,11 @@ section.lightpick .lightpick__previous-action {
   color: var(--color-white);
   background-color: var(--color-primary-2);
 }
+@media (max-width: 991px) {
+  .hotel-filter__slider .swiper {
+    margin-bottom: 32px;
+  }
+}
 .hotel-filter__slider .swiper-wrapper {
   align-items: stretch;
   overflow: visible;
@@ -2491,6 +2492,11 @@ section.lightpick .lightpick__previous-action {
 @media (max-width: 991px) {
   .featured-offers .section-wrapper {
     padding: 48px 24px;
+  }
+}
+@media (max-width: 991px) {
+  .featured-offers .section-wrapper .swiper {
+    margin-bottom: 32px;
   }
 }
 .featured-offers .section-wrapper .swiper-wrapper {
@@ -2817,7 +2823,7 @@ section.lightpick .lightpick__previous-action {
   transition: all 0.4s ease;
 }
 .accommodation-detail .col-left .contact li a:hover {
-  color: var(--color-primary-3);
+  color: var(--color-primary-2);
 }
 .accommodation-detail .col-left .facilities {
   margin-top: 64px;
@@ -2864,7 +2870,7 @@ section.lightpick .lightpick__previous-action {
   transform: translateY(4px);
 }
 .accommodation-detail .col-left .facilities-more {
-  margin-top: 12px;
+  margin-top: 8px;
   height: 0;
   overflow: hidden;
 }
@@ -2881,6 +2887,9 @@ section.lightpick .lightpick__previous-action {
   color: var(--color-black);
   transition: all 0.4s ease;
 }
+.accommodation-detail .col-left .facilities-view-more span {
+  transform: translateY(-1px);
+}
 @media (max-width: 991px) {
   .accommodation-detail .col-left .facilities-view-more {
     margin-top: 12px;
@@ -2893,7 +2902,7 @@ section.lightpick .lightpick__previous-action {
   opacity: 1;
 }
 .accommodation-detail .col-left .facilities-view-more:hover {
-  color: var(--color-primary-3);
+  color: var(--color-primary-2);
 }
 .accommodation-detail .col-left .facilities-view-more .icon {
   width: 12px;
