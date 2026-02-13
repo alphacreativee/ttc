@@ -3065,9 +3065,6 @@ section.lightpick .lightpick__previous-action {
   border-radius: unset;
   height: 100vh;
 }
-.modal-accommodation-detail .modal-content .swiper {
-  border-radius: 12px;
-}
 .modal-accommodation-detail .modal-content .swiper .image {
   width: 100%;
   aspect-ratio: 846/477;
@@ -3682,7 +3679,7 @@ section.lightpick .lightpick__previous-action {
   transform: scale(1.03);
 }
 .destination-location .destination-wrapper .location-review .location-item:hover .name {
-  color: var(--color-primary-3);
+  color: var(--color-primary-2);
 }
 .destination-location .destination-wrapper .location-review .location-image {
   width: 100%;
@@ -3801,7 +3798,7 @@ section.lightpick .lightpick__previous-action {
   }
 }
 #locationModal .location-popup-list .location-popup-item:hover .name {
-  color: var(--color-primary-3) !important;
+  color: var(--color-primary-2) !important;
 }
 #locationModal .location-popup-list .location-popup-item .location-info {
   margin-top: 12px;
