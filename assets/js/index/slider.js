@@ -47,7 +47,7 @@ export function sliderWithShadow() {
 
     new Swiper(swiperEl, {
       slidesPerView: 3,
-      spaceBetween: 0,
+      spaceBetween: 24,
       loop: false,
       speed: 800,
       autoplay: false,
@@ -58,15 +58,15 @@ export function sliderWithShadow() {
       breakpoints: {
         1024: {
           slidesPerView: 3,
-          spaceBetween: 0
+          spaceBetween: 24
         },
         480: {
           slidesPerView: 2,
-          spaceBetween: 0
+          spaceBetween: 24
         },
         0: {
           slidesPerView: 1,
-          spaceBetween: 0
+          spaceBetween: 24
         }
       }
     });

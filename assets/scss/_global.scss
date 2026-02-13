@@ -617,13 +617,13 @@ section.lightpick {
   gap: 12px;
   &:hover {
     span {
-      color: var(--color-primary-3) !important;
+      color: var(--color-primary-2) !important;
     }
     .icon {
       transform: translateX(5px);
       svg {
         path {
-          stroke: var(--color-primary-3);
+          stroke: var(--color-primary-2);
         }
       }
     }
@@ -636,10 +636,11 @@ section.lightpick {
     color: var(--color-black);
     transition: all 0.3s ease;
     display: inline-block;
-    transform: translateY(1px);
+    transform: translateY(-1px);
   }
   .icon {
     transition: transform 0.3s ease;
+
     svg {
       path {
         transition: stroke 0.3s ease;

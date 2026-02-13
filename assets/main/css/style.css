@@ -851,13 +851,13 @@ section.lightpick .lightpick__previous-action {
   gap: 12px;
 }
 .btn-arrow:hover span {
-  color: var(--color-primary-3) !important;
+  color: var(--color-primary-2) !important;
 }
 .btn-arrow:hover .icon {
   transform: translateX(5px);
 }
 .btn-arrow:hover .icon svg path {
-  stroke: var(--color-primary-3);
+  stroke: var(--color-primary-2);
 }
 .btn-arrow span {
   font-family: var(--font-heading);
@@ -867,7 +867,7 @@ section.lightpick .lightpick__previous-action {
   color: var(--color-black);
   transition: all 0.3s ease;
   display: inline-block;
-  transform: translateY(1px);
+  transform: translateY(-1px);
 }
 .btn-arrow .icon {
   transition: transform 0.3s ease;
@@ -2278,17 +2278,17 @@ section.lightpick .lightpick__previous-action {
   border-radius: 20px;
   backdrop-filter: blur(65px);
   margin: 0;
-  border: 1px solid rgba(64, 64, 64, 0.3);
+  background-color: var(--color-white);
   transition: all 0.4s ease;
 }
 .hotel-filter__top .nav-tabs .nav-link.active {
-  background-color: var(--color-black);
+  background-color: var(--color-primary-2);
   color: var(--color-white);
   pointer-events: none;
 }
 .hotel-filter__top .nav-tabs .nav-link:hover {
-  color: var(--color-black);
-  border-color: var(--color-black);
+  color: var(--color-white);
+  background-color: var(--color-primary-2);
 }
 .hotel-filter__slider .swiper {
   margin: 0 -12px;
@@ -2299,10 +2299,9 @@ section.lightpick .lightpick__previous-action {
 }
 .hotel-filter__slider .swiper-slide {
   height: auto;
-  padding: 0 12px 40px;
 }
 .hotel-filter .swiper-arrow.arrow-prev {
-  transform: scale(-1) translate(100%, calc(50% + 20px));
+  transform: scale(-1) translate(100%, 50%);
 }
 @media (max-width: 991px) {
   .hotel-filter .swiper-arrow.arrow-prev {
@@ -2310,7 +2309,7 @@ section.lightpick .lightpick__previous-action {
   }
 }
 .hotel-filter .swiper-arrow.arrow-next {
-  transform: translate(100%, calc(-20px - 50%));
+  transform: translate(100%, -50%);
 }
 @media (max-width: 991px) {
   .hotel-filter .swiper-arrow.arrow-next {
@@ -2321,14 +2320,7 @@ section.lightpick .lightpick__previous-action {
   display: flex;
   flex-direction: column;
   height: 100%;
-  box-shadow: 0px 20px 15px 0px rgba(0, 0, 0, 0.1);
-  border-radius: 20px;
   overflow: hidden;
-}
-@media (max-width: 991px) {
-  .hotel-filter__item {
-    box-shadow: 0px 15px 8px 0px rgba(0, 0, 0, 0.1);
-  }
 }
 .hotel-filter__item:hover .content-title,
 .hotel-filter__item:hover .btn-arrow {
@@ -2506,21 +2498,12 @@ section.lightpick .lightpick__previous-action {
     padding: 48px 24px;
   }
 }
-.featured-offers .section-wrapper .swiper {
-  margin: 0 -12px;
-}
 .featured-offers .section-wrapper .swiper-wrapper {
   align-items: stretch;
   overflow: visible;
 }
 .featured-offers .section-wrapper .swiper-slide {
   height: auto;
-  padding: 0 12px 40px;
-}
-@media (max-width: 991px) {
-  .featured-offers .section-wrapper .swiper-slide {
-    padding: 0 12px 32px;
-  }
 }
 .featured-offers .section-top {
   margin-bottom: 48px;
@@ -2551,8 +2534,6 @@ section.lightpick .lightpick__previous-action {
   position: relative;
   overflow: hidden;
   display: block;
-  box-shadow: 0px 20px 15px 0px rgba(0, 0, 0, 0.1);
-  border-radius: 20px;
 }
 .offer-item:hover img {
   transform: scale(1.03);
@@ -2578,7 +2559,6 @@ section.lightpick .lightpick__previous-action {
   height: 100%;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 50%);
   z-index: 2;
-  border-radius: 20px;
 }
 @media (max-width: 991px) {
   .offer-item .image {
@@ -2591,7 +2571,6 @@ section.lightpick .lightpick__previous-action {
   height: 100%;
   object-fit: cover;
   transition: transform 0.4s cubic-bezier(0, 0, 0.58, 1);
-  border-radius: 20px;
 }
 .offer-item .content {
   position: absolute;
