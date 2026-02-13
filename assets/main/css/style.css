@@ -867,7 +867,6 @@ section.lightpick .lightpick__previous-action {
   color: var(--color-black);
   transition: all 0.3s ease;
   display: inline-block;
-  transform: translateY(-1px);
 }
 .btn-arrow .icon {
   transition: transform 0.3s ease;
@@ -1513,7 +1512,7 @@ section.lightpick .lightpick__previous-action {
   font-family: var(--font-heading);
   font-size: 15px;
   line-height: 20px;
-  font-weight: 500;
+  font-weight: bold;
   color: var(--color-white);
   transition: color 0.3s ease;
 }

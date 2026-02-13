@@ -14,26 +14,26 @@ export function sectionNews() {
       autoplay: false,
       navigation: {
         prevEl: section.querySelector(".arrow-prev"),
-        nextEl: section.querySelector(".arrow-next")
+        nextEl: section.querySelector(".arrow-next"),
       },
       breakpoints: {
         1024: {
           slidesPerView: 3,
-          spaceBetween: 24
+          spaceBetween: 24,
         },
         768: {
           slidesPerView: 2,
-          spaceBetween: 24
+          spaceBetween: 24,
         },
         480: {
           slidesPerView: 2,
-          spaceBetween: 24
+          spaceBetween: 24,
         },
         0: {
           slidesPerView: 1,
-          spaceBetween: 24
-        }
-      }
+          spaceBetween: 24,
+        },
+      },
     });
   });
 }
@@ -53,22 +53,22 @@ export function sliderWithShadow() {
       autoplay: false,
       navigation: {
         prevEl: section.querySelector(".arrow-prev"),
-        nextEl: section.querySelector(".arrow-next")
+        nextEl: section.querySelector(".arrow-next"),
       },
       breakpoints: {
         1024: {
           slidesPerView: 3,
-          spaceBetween: 24
+          spaceBetween: 24,
         },
         480: {
           slidesPerView: 2,
-          spaceBetween: 24
+          spaceBetween: 24,
         },
         0: {
           slidesPerView: 1,
-          spaceBetween: 24
-        }
-      }
+          spaceBetween: 24,
+        },
+      },
     });
   });
 }
@@ -115,14 +115,14 @@ export function sliderParallax() {
       autoplay: hasAutoplay
         ? {
             delay: 3500,
-            disableOnInteraction: true
+            disableOnInteraction: true,
           }
         : false,
 
       navigation: hasArrow
         ? {
             nextEl: nextBtn,
-            prevEl: prevBtn
+            prevEl: prevBtn,
           }
         : false,
       on: {
@@ -166,15 +166,15 @@ export function sliderParallax() {
               slideInner.style.transition = `${speed}ms ${easing}`;
             }
           });
-        }
-      }
+        },
+      },
     });
 
     function updateLabel(swiper) {
       const realIndex = swiper.realIndex;
 
       const realSlides = swiper.el.querySelectorAll(
-        ".swiper-slide:not(.swiper-slide-duplicate)"
+        ".swiper-slide:not(.swiper-slide-duplicate)",
       );
 
       const total = realSlides.length;

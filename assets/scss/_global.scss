@@ -636,7 +636,7 @@ section.lightpick {
     color: var(--color-black);
     transition: all 0.3s ease;
     display: inline-block;
-    transform: translateY(-1px);
+    // transform: translateY(-2px);
   }
   .icon {
     transition: transform 0.3s ease;
