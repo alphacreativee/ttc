@@ -3486,24 +3486,16 @@ section.lightpick .lightpick__previous-action {
 .slider-gallery .thumbnail-list .swiper-slide {
   cursor: pointer;
 }
-.slider-gallery .thumbnail-list .swiper-slide:hover .thumbnail-image {
-  border: 1px solid var(--color-primary-3);
-}
 .slider-gallery .thumbnail-list .swiper-slide:hover .thumbnail-name {
-  color: var(--color-primary-3);
-}
-.slider-gallery .thumbnail-list .swiper-slide.swiper-slide-thumb-active .thumbnail-image {
-  border: 1px solid var(--color-primary-3);
+  color: var(--color-primary-1);
 }
 .slider-gallery .thumbnail-list .swiper-slide.swiper-slide-thumb-active .thumbnail-name {
-  color: var(--color-primary-3);
+  color: var(--color-primary-1);
 }
 .slider-gallery .thumbnail-list .thumbnail-image {
   width: 100%;
   aspect-ratio: 203/112;
-  border-radius: 12px;
   overflow: hidden;
-  border: 1px solid transparent;
   transition: all 0.3s ease;
 }
 .slider-gallery .thumbnail-list .thumbnail-image img {
@@ -3516,10 +3508,11 @@ section.lightpick .lightpick__previous-action {
   font-family: var(--font-heading);
   font-size: 13px;
   line-height: 20px;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--color-white);
   text-align: center;
   transition: color 0.3s ease;
+  text-transform: uppercase;
 }
 .slider-gallery .image-bg-list {
   position: relative;
@@ -3552,8 +3545,7 @@ section.lightpick .lightpick__previous-action {
   min-height: 330px;
   max-width: calc(33.3333333333% - 64px);
   padding: 32px;
-  border-radius: 20px;
-  background-color: rgba(24, 24, 25, 0.9);
+  background-color: rgba(2, 54, 104, 0.9);
   backdrop-filter: blur(10px);
   display: flex;
   flex-direction: column;
@@ -3644,7 +3636,6 @@ section.lightpick .lightpick__previous-action {
   width: 100%;
   overflow: hidden;
   aspect-ratio: 16/9;
-  border-radius: 12px;
 }
 @media (max-width: 767px) {
   .destination-location .destination-wrapper .location-iframe .iframe {
@@ -3687,7 +3678,6 @@ section.lightpick .lightpick__previous-action {
 .destination-location .destination-wrapper .location-review .location-image {
   width: 100%;
   aspect-ratio: 195/104;
-  border-radius: 12px;
   overflow: hidden;
 }
 .destination-location .destination-wrapper .location-review .location-image img {
@@ -3754,7 +3744,7 @@ section.lightpick .lightpick__previous-action {
   stroke: var(--color-white);
 }
 #locationModal .modal-content {
-  border-radius: 12px;
+  border-radius: unset;
   background-color: var(--color-white);
 }
 @media (max-width: 767px) {
@@ -3780,7 +3770,6 @@ section.lightpick .lightpick__previous-action {
 }
 #locationModal .modal-body::-webkit-scrollbar-thumb {
   background: rgba(132, 38, 126, 0.5);
-  border-radius: 10px;
 }
 #locationModal .modal-dialog {
   max-width: 900px;
@@ -3828,7 +3817,6 @@ section.lightpick .lightpick__previous-action {
 }
 #locationModal .location-popup-list .location-popup-item .location-image {
   overflow: hidden;
-  border-radius: 12px;
   width: 100%;
   aspect-ratio: 190/104;
 }
@@ -3851,7 +3839,6 @@ section.lightpick .lightpick__previous-action {
 #locationModal .location-popup-list .location-popup-item:first-child .location-image {
   width: 100%;
   aspect-ratio: 410/230;
-  border-radius: 12px;
   overflow: hidden;
 }
 #locationModal .location-popup-list .location-popup-item:first-child .location-image img {
@@ -3866,7 +3853,6 @@ section.lightpick .lightpick__previous-action {
 #locationModal .location-popup-list .location-popup-item:nth-child(2) .location-image {
   width: 100%;
   aspect-ratio: 410/230;
-  border-radius: 12px;
   overflow: hidden;
 }
 #locationModal .location-popup-list .location-popup-item:nth-child(2) .location-image img {
@@ -3912,19 +3898,19 @@ section.lightpick .lightpick__previous-action {
   font-size: 13px;
   line-height: 20px;
   font-weight: 600;
-  color: var(--color-black);
+  color: var(--color-primary-2);
   padding: 8px 16px;
   border-radius: 20px;
-  background-color: var(--color-white);
+  background-color: #eddeec;
   transition: all 0.4s ease;
   cursor: pointer;
 }
 #locationModal .location-filter .filter-list-button .filter-button:hover {
-  background-color: var(--color-black);
+  background-color: var(--color-primary-2);
   color: var(--color-white);
 }
 #locationModal .location-filter .filter-list-button .filter-button.active {
-  background-color: var(--color-black);
+  background-color: var(--color-primary-2);
   color: var(--color-white);
   pointer-events: none;
 }
