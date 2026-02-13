@@ -192,8 +192,7 @@
     padding: 130px 80px;
     display: flex;
     width: 100%;
-    background: url("../../images/bg-modal-accommodation-type.jpg") no-repeat
-      center;
+    background: url("../../images/bg-modal-room.jpg") no-repeat center;
     background-size: cover;
 
     @media (max-width: 991px) {
@@ -202,7 +201,9 @@
     }
 
     @media (max-width: 480px) {
-      background: url("../../images/bg-modal-booking-mobile.jpg") no-repeat top;
+      background: #fff url("../../images/bg-modal-room-mobile.jpg") no-repeat
+        top;
+      background-size: contain;
     }
 
     .modal {
