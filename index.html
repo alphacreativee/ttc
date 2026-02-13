@@ -161,129 +161,156 @@
           </div>
           <!-- end option slider change content -->
 
-          <div class="booking-form-container">
-            <form action="">
-              <div class="booking-form-item">
-                <div class="dropdown-custom-select select-destination">
-                  <div
-                    class="dropdown-custom-btn d-flex align-items-center justify-content-between"
-                  >
+          <div class="booking-form-wrapper">
+            <div class="btn-booking-close">
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 13 13"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M12.3535 0.353516L0.353516 12.3535" stroke="#181819" />
+                <path d="M0.353516 0.353516L12.3535 12.3535" stroke="#181819" />
+              </svg>
+            </div>
+            <div class="booking-form-container">
+              <form action="">
+                <div class="booking-form-item">
+                  <div class="dropdown-custom-select select-destination">
                     <div
-                      class="d-flex align-items-center dropdown-custom-label gap-2"
+                      class="dropdown-custom-btn d-flex align-items-center justify-content-between"
                     >
-                      <div class="icon flex-shrink-0">
+                      <div
+                        class="d-flex align-items-center dropdown-custom-label gap-2"
+                      >
+                        <div class="icon flex-shrink-0">
+                          <img
+                            src="./assets/images/icons/icon-destination.svg"
+                            alt=""
+                          />
+                        </div>
+                        <div class="dropdown-custom-text">Điểm đến</div>
+                      </div>
+                      <div class="icon-arrow">
                         <img
-                          src="./assets/images/icons/icon-destination.svg"
+                          src="./assets/images/icons/icon-arrow-down.svg"
                           alt=""
                         />
                       </div>
-                      <div class="dropdown-custom-text">Điểm đến</div>
                     </div>
-                    <div class="icon-arrow">
+                    <div class="dropdown-custom-menu">
+                      <div class="dropdown-custom-item">
+                        TTC Hotel - Cần Thơ
+                      </div>
+                      <div class="dropdown-custom-item">
+                        TTC Hotel - Ngọc Lan
+                      </div>
+                      <div class="dropdown-custom-item">TTC Hotel - Đà Lạt</div>
+                      <div class="dropdown-custom-item">
+                        TTC Hotel - Airport
+                      </div>
+                      <div class="dropdown-custom-item">TTC Imperial Hotel</div>
+                      <div class="dropdown-custom-item">
+                        TTC Resort - Ninh Thuận
+                      </div>
+                      <div class="dropdown-custom-item">TTC Hotel - Hội An</div>
+                      <div class="dropdown-custom-item">
+                        TTC Hotel - Michelia
+                      </div>
+                      <div class="dropdown-custom-item">
+                        TTC Hotel - Phan Thiết
+                      </div>
+                      <div class="dropdown-custom-item">
+                        TTC Van Phong Bay Resort
+                      </div>
+                      <div class="dropdown-custom-item">TTC Hotel - Angkor</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="booking-form-item">
+                  <div
+                    class="booking-calendar d-flex align-items-center justify-content-between"
+                  >
+                    <div class="d-flex align-items-center gap-2">
+                      <div class="icon flex-shrink-0">
+                        <img
+                          src="./assets/images/icons/icon-calendar.svg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="booking-time d-flex align-items-center">
+                        <input type="text" id="checkInDate" size="10" />
+                        <span>-</span>
+                        <input type="text" id="checkOutDate" size="10" />
+                      </div>
+                    </div>
+                    <div class="icon-arrow d-none">
                       <img
                         src="./assets/images/icons/icon-arrow-down.svg"
                         alt=""
                       />
                     </div>
                   </div>
-                  <div class="dropdown-custom-menu">
-                    <div class="dropdown-custom-item">TTC Hotel - Cần Thơ</div>
-                    <div class="dropdown-custom-item">TTC Hotel - Ngọc Lan</div>
-                    <div class="dropdown-custom-item">TTC Hotel - Đà Lạt</div>
-                    <div class="dropdown-custom-item">TTC Hotel - Airport</div>
-                    <div class="dropdown-custom-item">TTC Imperial Hotel</div>
-                    <div class="dropdown-custom-item">
-                      TTC Resort - Ninh Thuận
+                </div>
+                <div class="booking-form-item">
+                  <div class="select-people">
+                    <div
+                      class="select-people-wrapper d-flex align-items-center gap-2"
+                    >
+                      <div class="icon flex-shrink-0">
+                        <img
+                          src="./assets/images/icons/icon-people.svg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="label">
+                        <span class="adult-value">1</span> Người lớn,
+                        <span class="child-value">0</span> Trẻ em
+                      </div>
                     </div>
-                    <div class="dropdown-custom-item">TTC Hotel - Hội An</div>
-                    <div class="dropdown-custom-item">TTC Hotel - Michelia</div>
-                    <div class="dropdown-custom-item">
-                      TTC Hotel - Phan Thiết
+                    <div class="select-box">
+                      <div class="adult">
+                        <div class="label">Người lớn</div>
+                        <div class="select">
+                          <div class="min">-</div>
+                          <div class="val">1</div>
+                          <div class="plus">+</div>
+                        </div>
+                      </div>
+                      <div class="child">
+                        <div class="label">Trẻ em</div>
+                        <div class="select">
+                          <div class="min">-</div>
+                          <div class="val">0</div>
+                          <div class="plus">+</div>
+                        </div>
+                      </div>
                     </div>
-                    <div class="dropdown-custom-item">
-                      TTC Van Phong Bay Resort
-                    </div>
-                    <div class="dropdown-custom-item">TTC Hotel - Angkor</div>
                   </div>
                 </div>
-              </div>
-              <div class="booking-form-item">
-                <div
-                  class="booking-calendar d-flex align-items-center justify-content-between"
-                >
-                  <div class="d-flex align-items-center gap-2">
+                <div class="booking-form-item">
+                  <div
+                    class="booking-promotion d-flex align-items-center gap-2"
+                  >
                     <div class="icon flex-shrink-0">
                       <img
-                        src="./assets/images/icons/icon-calendar.svg"
+                        src="./assets/images/icons/icon-promotion.svg"
                         alt=""
                       />
                     </div>
-                    <div class="booking-time d-flex align-items-center">
-                      <input type="text" id="checkInDate" size="10" />
-                      <span>-</span>
-                      <input type="text" id="checkOutDate" size="10" />
-                    </div>
-                  </div>
-                  <div class="icon-arrow d-none">
-                    <img
-                      src="./assets/images/icons/icon-arrow-down.svg"
-                      alt=""
-                    />
+                    <input type="text" placeholder="Mã khuyến mãi" />
                   </div>
                 </div>
-              </div>
-              <div class="booking-form-item">
-                <div class="select-people">
-                  <div
-                    class="select-people-wrapper d-flex align-items-center gap-2"
-                  >
-                    <div class="icon flex-shrink-0">
-                      <img src="./assets/images/icons/icon-people.svg" alt="" />
-                    </div>
-                    <div class="label">
-                      <span class="adult-value">1</span> Người lớn,
-                      <span class="child-value">0</span> Trẻ em
-                    </div>
-                  </div>
-                  <div class="select-box">
-                    <div class="adult">
-                      <div class="label">Người lớn</div>
-                      <div class="select">
-                        <div class="min">-</div>
-                        <div class="val">1</div>
-                        <div class="plus">+</div>
-                      </div>
-                    </div>
-                    <div class="child">
-                      <div class="label">Trẻ em</div>
-                      <div class="select">
-                        <div class="min">-</div>
-                        <div class="val">0</div>
-                        <div class="plus">+</div>
-                      </div>
-                    </div>
-                  </div>
+                <div
+                  class="booking-form-item button-find-room d-flex justify-content-end"
+                >
+                  <button class="button-global">
+                    <span>Tìm phòng</span>
+                  </button>
                 </div>
-              </div>
-              <div class="booking-form-item">
-                <div class="booking-promotion d-flex align-items-center gap-2">
-                  <div class="icon flex-shrink-0">
-                    <img
-                      src="./assets/images/icons/icon-promotion.svg"
-                      alt=""
-                    />
-                  </div>
-                  <input type="text" placeholder="Mã khuyến mãi" />
-                </div>
-              </div>
-              <div
-                class="booking-form-item button-find-room d-flex justify-content-end"
-              >
-                <button class="button-global">
-                  <span>Tìm phòng</span>
-                </button>
-              </div>
-            </form>
+              </form>
+            </div>
           </div>
         </div>
       </section>
