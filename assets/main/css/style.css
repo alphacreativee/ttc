@@ -558,7 +558,7 @@ button.aloading::after {
   transition: color 0.3s ease;
 }
 .booking-form-container form .dropdown-custom-item:hover {
-  color: var(--color-primary-3);
+  color: var(--color-primary-2);
 }
 .booking-form-container form .booking-time {
   transform: translateY(2px);
@@ -1014,8 +1014,10 @@ section.lightpick .lightpick__previous-action {
   transition: unset;
   pointer-events: none;
 }
-.footer-menu .menu > ul .menu-item-has-children li:not(:first-child) {
-  margin-top: 8px;
+@media (max-width: 767px) {
+  .footer-menu .menu > ul .menu-item-has-children li:not(:first-child) {
+    margin-top: 0;
+  }
 }
 .footer-menu .menu > ul .menu-item-has-children ul {
   display: grid;
@@ -1029,19 +1031,14 @@ section.lightpick .lightpick__previous-action {
 }
 @media (max-width: 767px) {
   .footer-menu .menu > ul .menu-item-has-children ul {
-    gap: 8px 24px;
-  }
-}
-@media (max-width: 480px) {
-  .footer-menu .menu > ul .menu-item-has-children ul {
-    grid-template-columns: 1fr;
+    gap: 8px 40px;
   }
 }
 .footer-menu .menu a {
   transition: all 0.4s ease;
 }
 .footer-menu .menu a:hover {
-  color: var(--color-primary-1);
+  background-color: var(--color-primary-1);
 }
 .footer-logo {
   display: block;
@@ -1476,6 +1473,9 @@ section.lightpick .lightpick__previous-action {
 }
 #header .header-menu ul li.menu-item-has-children > a.active .icon svg path {
   stroke: var(--color-primary-2) !important;
+}
+#header .header-menu ul li.menu-item-has-children a.user-click-none {
+  pointer-events: none;
 }
 #header .header-menu ul li.menu-item-has-children > .sub-menu {
   position: absolute;
@@ -2273,6 +2273,7 @@ section.lightpick .lightpick__previous-action {
   backdrop-filter: blur(65px);
   margin: 0;
   background-color: var(--color-white);
+  border: none;
   transition: all 0.4s ease;
 }
 .hotel-filter__top .nav-tabs .nav-link.active {
@@ -3086,7 +3087,7 @@ section.lightpick .lightpick__previous-action {
   padding: 130px 80px;
   display: flex;
   width: 100%;
-  background: url("../../images/bg-modal-room.jpg") no-repeat center;
+  background: url("../../images/bg-modal-accommodation-type.jpg") no-repeat center;
   background-size: cover;
 }
 @media (max-width: 991px) {

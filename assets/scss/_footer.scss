@@ -102,7 +102,11 @@
 
           li {
             &:not(:first-child) {
-              margin-top: 8px;
+              // margin-top: 8px;
+
+              @media (max-width: 767px) {
+                margin-top: 0;
+              }
             }
           }
 
@@ -116,11 +120,11 @@
             }
 
             @media (max-width: 767px) {
-              gap: 8px 24px;
+              gap: 8px 40px;
             }
 
             @media (max-width: 480px) {
-              grid-template-columns: 1fr;
+              // grid-template-columns: repeat(2, 1fr);
             }
           }
         }
@@ -130,7 +134,7 @@
         transition: all 0.4s ease;
 
         &:hover {
-          color: var(--color-primary-1);
+          background-color: var(--color-primary-1);
         }
       }
     }

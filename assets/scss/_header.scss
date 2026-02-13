@@ -229,6 +229,9 @@
                 }
               }
             }
+            a.user-click-none {
+              pointer-events: none;
+            }
             & > .sub-menu {
               position: absolute;
               background-color: var(--color-white);
