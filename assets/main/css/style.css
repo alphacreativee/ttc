@@ -2324,11 +2324,11 @@ section.lightpick .lightpick__previous-action {
 }
 .hotel-filter__item:hover .content-title,
 .hotel-filter__item:hover .btn-arrow {
-  color: var(--color-primary-3);
+  color: var(--color-primary-2);
 }
 .hotel-filter__item:hover .content-title span,
 .hotel-filter__item:hover .btn-arrow span {
-  color: var(--color-primary-3);
+  color: var(--color-primary-2);
 }
 .hotel-filter__item:hover .content-title .icon,
 .hotel-filter__item:hover .btn-arrow .icon {
@@ -2336,7 +2336,7 @@ section.lightpick .lightpick__previous-action {
 }
 .hotel-filter__item:hover .content-title .icon svg path,
 .hotel-filter__item:hover .btn-arrow .icon svg path {
-  stroke: var(--color-primary-3);
+  stroke: var(--color-primary-2);
 }
 .hotel-filter__item:hover img {
   transform: scale(1.03);
