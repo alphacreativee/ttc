@@ -1312,7 +1312,7 @@ section.lightpick .lightpick__previous-action {
   min-width: 30px;
   font-size: 13px;
   line-height: 20px;
-  font-weight: 600;
+  font-weight: bold;
   color: var(--color-white);
 }
 @media (max-width: 991px) {
@@ -1361,7 +1361,7 @@ section.lightpick .lightpick__previous-action {
   min-width: 30px;
   font-size: 13px;
   line-height: 20px;
-  font-weight: 600;
+  font-weight: bold;
   color: var(--color-black);
   transition: color 0.3s ease;
 }
@@ -1437,7 +1437,7 @@ section.lightpick .lightpick__previous-action {
   line-height: 20px;
   color: var(--color-gray-2);
   font-family: var(--font-heading);
-  font-weight: 600;
+  font-weight: bold;
   display: flex;
   flex-direction: row-reverse;
   gap: 12px;
@@ -1465,7 +1465,7 @@ section.lightpick .lightpick__previous-action {
   font-family: var(--font-body);
   font-size: 15px;
   line-height: 25px;
-  font-weight: 500;
+  font-weight: bold;
   text-transform: unset;
   margin-bottom: 0;
 }
@@ -1473,7 +1473,7 @@ section.lightpick .lightpick__previous-action {
   display: inline-block;
   font-size: 13px;
   line-height: 15px;
-  font-weight: 600;
+  font-weight: bold;
   color: var(--color-gray-2);
   font-family: var(--font-heading);
   margin-top: 64px;
@@ -2767,9 +2767,6 @@ section.lightpick .lightpick__previous-action {
   .accommodation-detail .section-wrapper {
     padding: 48px 24px;
   }
-}
-.accommodation-detail .swiper {
-  border-radius: 12px;
 }
 .accommodation-detail .swiper .image {
   width: 100%;
