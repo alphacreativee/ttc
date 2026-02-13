@@ -2925,7 +2925,7 @@ section.lightpick .lightpick__previous-action {
 }
 
 .accommodation-type {
-  background-color: var(--color-secondary-1);
+  background-color: #eddeec;
 }
 .accommodation-type .section-wrapper {
   padding: 80px;
@@ -2955,9 +2955,7 @@ section.lightpick .lightpick__previous-action {
 .accommodation-item__horizontal {
   display: flex;
   align-items: stretch;
-  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 20px 15px 0 rgba(0, 0, 0, 0.1);
   background-color: var(--color-white);
 }
 @media (max-width: 991px) {
