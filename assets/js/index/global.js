@@ -197,11 +197,11 @@ export function bookingTime() {
       calendar.style.top =
         rect.top + window.scrollY - calendar.offsetHeight - 20 + "px";
       calendar.style.left = rect.left + window.scrollX - 30 + "px";
-      calendar.style.borderRadius = "12px 12px 0 0";
+      // calendar.style.borderRadius = "12px 12px 0 0";
     } else {
       calendar.style.top = rect.bottom + window.scrollY + 15 + "px";
       calendar.style.left = rect.left + window.scrollX - 30 + "px";
-      calendar.style.borderRadius = "0 0 12px 12px";
+      // calendar.style.borderRadius = "0 0 12px 12px";
     }
   }
 
