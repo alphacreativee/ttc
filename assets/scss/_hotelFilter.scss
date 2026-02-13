@@ -99,15 +99,15 @@
     &:hover {
       .content-title,
       .btn-arrow {
-        color: var(--color-primary-3);
+        color: var(--color-primary-2);
         span {
-          color: var(--color-primary-3);
+          color: var(--color-primary-2);
         }
         .icon {
           transform: translateX(5px);
           svg {
             path {
-              stroke: var(--color-primary-3);
+              stroke: var(--color-primary-2);
             }
           }
         }
