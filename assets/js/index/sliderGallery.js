@@ -15,23 +15,23 @@ export function sliderGallery() {
 
     navigation: {
       nextEl: ".thumbnail-list-wrapper .swiper-button-next",
-      prevEl: ".thumbnail-list-wrapper .swiper-button-prev"
+      prevEl: ".thumbnail-list-wrapper .swiper-button-prev",
     },
 
     on: {
       init() {
         this.el.style.opacity = "1";
-      }
+      },
     },
 
     breakpoints: {
       768: {
-        slidesPerView: 3.5
+        slidesPerView: 3.5,
       },
       992: {
-        slidesPerView: 6
-      }
-    }
+        slidesPerView: 6,
+      },
+    },
   });
 
   const swiperBg = new Swiper(".slider-image-bg", {
@@ -40,10 +40,10 @@ export function sliderGallery() {
     effect: "fade",
     speed: 1000,
     fadeEffect: {
-      crossFade: true
+      crossFade: true,
     },
     thumbs: {
-      swiper: swiperThumbnails
+      swiper: swiperThumbnails,
     },
     on: {
       slideChangeTransitionStart: function () {
@@ -55,7 +55,7 @@ export function sliderGallery() {
 
         // Kill tất cả animation đang chạy
         const contentGroup = gallerySection.querySelector(
-          ".content-thumbnail-group"
+          ".content-thumbnail-group",
         );
         if (contentGroup) {
           gsap.killTweensOf(contentGroup.querySelectorAll("*"));
@@ -70,7 +70,7 @@ export function sliderGallery() {
 
         // Fade out nội dung cũ nhanh hơn
         const currentElements = contentGroup.querySelectorAll(
-          ".name-room, .description, a"
+          ".name-room, .description, a",
         );
         if (currentElements.length > 0) {
           gsap.to(currentElements, {
@@ -78,7 +78,7 @@ export function sliderGallery() {
             y: -10,
             ease: "power2.in",
             duration: 0.2,
-            stagger: 0.03
+            stagger: 0.03,
           });
         }
 
@@ -86,7 +86,7 @@ export function sliderGallery() {
         contentTimeout = setTimeout(() => {
           const activeSlide = this.slides[this.activeIndex];
           const contentWrapper = activeSlide?.querySelector(
-            ".thumbnail-content-wrapper"
+            ".thumbnail-content-wrapper",
           );
 
           if (!contentWrapper) {
@@ -127,8 +127,8 @@ export function sliderGallery() {
                 y: 0,
                 ease: "power2.out",
                 duration: 0.5,
-                delay: 0.1
-              }
+                delay: 0.1,
+              },
             );
             animationPromises.push(tween);
           }
@@ -141,8 +141,8 @@ export function sliderGallery() {
                 y: 0,
                 ease: "power2.out",
                 duration: 0.5,
-                delay: 0.2
-              }
+                delay: 0.2,
+              },
             );
             animationPromises.push(tween);
           }
@@ -158,8 +158,8 @@ export function sliderGallery() {
                 delay: 0.3,
                 onComplete: () => {
                   isTransitioning = false;
-                }
-              }
+                },
+              },
             );
             animationPromises.push(tween);
           } else {
@@ -175,14 +175,14 @@ export function sliderGallery() {
         setTimeout(() => {
           isTransitioning = false;
         }, 100);
-      }
-    }
+      },
+    },
   });
 
   // Khởi tạo nội dung cho slide đầu tiên
   const initialSlide = swiperBg.slides[swiperBg.activeIndex];
   const initialContentWrapper = initialSlide?.querySelector(
-    ".thumbnail-content-wrapper"
+    ".thumbnail-content-wrapper",
   );
   const contentGroup = gallerySection.querySelector(".content-thumbnail-group");
 
@@ -225,7 +225,7 @@ export function sliderGallery() {
               y: 0,
               ease: "power2.out",
               duration: 0.6,
-              delay: 0.2
+              delay: 0.2,
             });
           }
           if (initDesc) {
@@ -234,7 +234,7 @@ export function sliderGallery() {
               y: 0,
               ease: "power2.out",
               duration: 0.6,
-              delay: 0.4
+              delay: 0.4,
             });
           }
           if (initLink) {
@@ -243,10 +243,10 @@ export function sliderGallery() {
               y: 0,
               ease: "power2.out",
               duration: 0.6,
-              delay: 0.6
+              delay: 0.6,
             });
           }
-        }
+        },
       });
     }
   }
