@@ -651,10 +651,20 @@
               & > a {
                 &.active {
                   color: var(--color-primary-2) !important ;
+
+                  &.user-click-none {
+                    pointer-events: none;
+                    color: var(--color-black) !important;
+
+                    @media (max-width: 991px) {
+                      color: var(--color-black) !important;
+                    }
+                  }
+
                   .icon {
                     svg {
                       path {
-                        stroke: var(--color-primary-2) !important ;
+                        stroke: var(--color-black) !important ;
                       }
                     }
                   }
@@ -669,7 +679,11 @@
               }
             }
             a {
-              color: var(--color-primary-3);
+              color: var(--color-black);
+
+              &.user-click-none {
+                color: var(--color-black) !important;
+              }
             }
           }
         }

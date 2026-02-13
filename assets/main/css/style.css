@@ -1843,14 +1843,26 @@ section.lightpick .lightpick__previous-action {
 #header.header-theme-light .header-menu ul li.menu-item-has-children > a.active, #header.header-theme-sec .header-menu ul li.menu-item-has-children > a.active {
   color: var(--color-primary-2) !important;
 }
+#header.header-theme-light .header-menu ul li.menu-item-has-children > a.active.user-click-none, #header.header-theme-sec .header-menu ul li.menu-item-has-children > a.active.user-click-none {
+  pointer-events: none;
+  color: var(--color-black) !important;
+}
+@media (max-width: 991px) {
+  #header.header-theme-light .header-menu ul li.menu-item-has-children > a.active.user-click-none, #header.header-theme-sec .header-menu ul li.menu-item-has-children > a.active.user-click-none {
+    color: var(--color-black) !important;
+  }
+}
 #header.header-theme-light .header-menu ul li.menu-item-has-children > a.active .icon svg path, #header.header-theme-sec .header-menu ul li.menu-item-has-children > a.active .icon svg path {
-  stroke: var(--color-primary-2) !important;
+  stroke: var(--color-black) !important;
 }
 #header.header-theme-light .header-menu ul li.menu-item-has-children > a .icon svg path, #header.header-theme-sec .header-menu ul li.menu-item-has-children > a .icon svg path {
   stroke: var(--color-primary-3);
 }
 #header.header-theme-light .header-menu ul li a, #header.header-theme-sec .header-menu ul li a {
-  color: var(--color-primary-3);
+  color: var(--color-black);
+}
+#header.header-theme-light .header-menu ul li a.user-click-none, #header.header-theme-sec .header-menu ul li a.user-click-none {
+  color: var(--color-black) !important;
 }
 #header.header-theme-light .header-logo-group .logo img:last-child, #header.header-theme-sec .header-logo-group .logo img:last-child {
   opacity: 1;
