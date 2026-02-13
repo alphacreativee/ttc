@@ -94,8 +94,28 @@
         align-items: center;
         gap: 24px;
         li {
+          a.user-click-none {
+            pointer-events: none;
+
+            &.active {
+              color: var(--color-white) !important;
+
+              @media (max-width: 991px) {
+                color: var(--color-black) !important;
+              }
+            }
+          }
+
           &.menu-item-has-children {
             position: relative;
+
+            a.user-click-none {
+              pointer-events: none;
+
+              &.active {
+                color: var(--color-black) !important;
+              }
+            }
 
             &::after {
               content: "";
@@ -135,6 +155,28 @@
               display: flex;
               align-items: center;
               gap: 8px;
+
+              &.user-click-none {
+                pointer-events: none;
+
+                &.active {
+                  color: var(--color-white) !important;
+
+                  @media (max-width: 991px) {
+                    color: var(--color-black) !important;
+                  }
+
+                  .icon {
+                    path {
+                      stroke: var(--color-white) !important;
+
+                      @media (max-width: 991px) {
+                        stroke: var(--color-black) !important;
+                      }
+                    }
+                  }
+                }
+              }
               .icon {
                 svg {
                   path {
@@ -180,10 +222,18 @@
                       align-items: center;
                       justify-content: flex-end;
                       margin-bottom: 8px;
+                      &.user-click-none {
+                        color: var(--color-black) !important;
+                      }
                       &.location-hotel {
                         pointer-events: none;
+                        color: var(--color-black) !important;
                         &:hover {
                           color: var(--color-primary-2) !important ;
+                        }
+
+                        &.user-click-none {
+                          color: var(--color-black) !important;
                         }
                       }
                       span {
@@ -229,9 +279,7 @@
                 }
               }
             }
-            a.user-click-none {
-              pointer-events: none;
-            }
+
             & > .sub-menu {
               position: absolute;
               background-color: var(--color-white);

@@ -1,6 +1,6 @@
 :root {
   --font-heading: "SVN-Gilroy", sans-serif;
-  --font-body: "Montserrat", sans-serif;
+  --font-body: "SVN-Gilroy", sans-serif;
   --color-black: #023668;
   --color-white: #ffffff;
   --color-primary-1: #c9a455;
@@ -1363,8 +1363,25 @@ section.lightpick .lightpick__previous-action {
   align-items: center;
   gap: 24px;
 }
+#header .header-menu ul li a.user-click-none {
+  pointer-events: none;
+}
+#header .header-menu ul li a.user-click-none.active {
+  color: var(--color-white) !important;
+}
+@media (max-width: 991px) {
+  #header .header-menu ul li a.user-click-none.active {
+    color: var(--color-black) !important;
+  }
+}
 #header .header-menu ul li.menu-item-has-children {
   position: relative;
+}
+#header .header-menu ul li.menu-item-has-children a.user-click-none {
+  pointer-events: none;
+}
+#header .header-menu ul li.menu-item-has-children a.user-click-none.active {
+  color: var(--color-black) !important;
 }
 #header .header-menu ul li.menu-item-has-children::after {
   content: "";
@@ -1398,6 +1415,25 @@ section.lightpick .lightpick__previous-action {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+#header .header-menu ul li.menu-item-has-children > a.user-click-none {
+  pointer-events: none;
+}
+#header .header-menu ul li.menu-item-has-children > a.user-click-none.active {
+  color: var(--color-white) !important;
+}
+@media (max-width: 991px) {
+  #header .header-menu ul li.menu-item-has-children > a.user-click-none.active {
+    color: var(--color-black) !important;
+  }
+}
+#header .header-menu ul li.menu-item-has-children > a.user-click-none.active .icon path {
+  stroke: var(--color-white) !important;
+}
+@media (max-width: 991px) {
+  #header .header-menu ul li.menu-item-has-children > a.user-click-none.active .icon path {
+    stroke: var(--color-black) !important;
+  }
 }
 #header .header-menu ul li.menu-item-has-children > a .icon svg path {
   transition: stroke 0.3s ease;
@@ -1438,11 +1474,18 @@ section.lightpick .lightpick__previous-action {
   justify-content: flex-end;
   margin-bottom: 8px;
 }
+#header .header-menu ul li.menu-item-has-children > a.menu-full-ks + .sub-menu > ul > li.menu-item-has-children a.user-click-none {
+  color: var(--color-black) !important;
+}
 #header .header-menu ul li.menu-item-has-children > a.menu-full-ks + .sub-menu > ul > li.menu-item-has-children a.location-hotel {
   pointer-events: none;
+  color: var(--color-black) !important;
 }
 #header .header-menu ul li.menu-item-has-children > a.menu-full-ks + .sub-menu > ul > li.menu-item-has-children a.location-hotel:hover {
   color: var(--color-primary-2) !important;
+}
+#header .header-menu ul li.menu-item-has-children > a.menu-full-ks + .sub-menu > ul > li.menu-item-has-children a.location-hotel.user-click-none {
+  color: var(--color-black) !important;
 }
 #header .header-menu ul li.menu-item-has-children > a.menu-full-ks + .sub-menu > ul > li.menu-item-has-children a span {
   transform: translateY(1px);
@@ -1473,9 +1516,6 @@ section.lightpick .lightpick__previous-action {
 }
 #header .header-menu ul li.menu-item-has-children > a.active .icon svg path {
   stroke: var(--color-primary-2) !important;
-}
-#header .header-menu ul li.menu-item-has-children a.user-click-none {
-  pointer-events: none;
 }
 #header .header-menu ul li.menu-item-has-children > .sub-menu {
   position: absolute;
