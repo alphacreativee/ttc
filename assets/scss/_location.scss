@@ -153,8 +153,7 @@
   }
   .modal-content {
     border-radius: 12px;
-    background-image: url("../../images/paper-texture-big.jpg");
-    background-size: 100% 100%;
+    background-color: var(--color-white);
 
     @media (max-width: 767px) {
       border-radius: unset;
@@ -180,12 +179,8 @@
     }
 
     &::-webkit-scrollbar-thumb {
-      background: rgba(168, 116, 57, 0.5);
+      background: rgba(132, 38, 126, 0.5);
       border-radius: 10px;
-
-      &:hover {
-        background: var(--color-primary-2);
-      }
     }
   }
   .modal-dialog {
@@ -330,18 +325,20 @@
         color: var(--color-black);
         padding: 8px 16px;
         border-radius: 20px;
-        border: 1px solid rgba(24, 24, 25, 0.3);
+        // border: 1px solid rgba(24, 24, 25, 0.3);
+        background-color: var(--color-white);
         transition: all 0.4s ease;
         cursor: pointer;
         &:hover {
           background-color: var(--color-black);
           color: var(--color-white);
-          border: 1px solid var(--color-black);
+          // border: 1px solid var(--color-black);
         }
         &.active {
           background-color: var(--color-black);
           color: var(--color-white);
-          border: 1px solid var(--color-black);
+          // border: 1px solid var(--color-black);
+          pointer-events: none;
         }
       }
     }
