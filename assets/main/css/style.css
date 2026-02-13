@@ -2768,9 +2768,6 @@ section.lightpick .lightpick__previous-action {
     padding: 48px 24px;
   }
 }
-.accommodation-detail .swiper {
-  border-radius: 12px;
-}
 .accommodation-detail .swiper .image {
   width: 100%;
   aspect-ratio: 628/471;
